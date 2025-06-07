@@ -1,0 +1,15 @@
+{"timestamp": "2025-06-07T14:57:38.317994", "level": "INFO", "message": "Rate limiter usando armazenamento em mem\u00f3ria", "module": "app", "function": "<module>", "line": 139}
+{"timestamp": "2025-06-07T14:57:38.317994", "level": "INFO", "message": "Modelo Gemini inicializado com sucesso", "module": "app", "function": "<module>", "line": 144}
+{"timestamp": "2025-06-07T14:57:38.348380", "level": "INFO", "message": "Iniciando servidor em modo Windows", "module": "app", "function": "<module>", "line": 502}
+{"timestamp": "2025-06-07T15:01:36.349570", "level": "INFO", "message": "Rate limiter usando armazenamento em mem\u00f3ria", "module": "app", "function": "<module>", "line": 139}
+{"timestamp": "2025-06-07T15:01:36.353571", "level": "INFO", "message": "Modelo Gemini inicializado com sucesso", "module": "app", "function": "<module>", "line": 144}
+{"timestamp": "2025-06-07T15:01:36.364878", "level": "INFO", "message": "Iniciando servidor em modo Windows", "module": "app", "function": "<module>", "line": 502}
+{"timestamp": "2025-06-07T15:12:44.630336", "level": "INFO", "message": "Rate limiter usando armazenamento em mem\u00f3ria", "module": "app", "function": "<module>", "line": 139}
+{"timestamp": "2025-06-07T15:12:44.631447", "level": "INFO", "message": "Modelo Gemini inicializado com sucesso", "module": "app", "function": "<module>", "line": 144}
+{"timestamp": "2025-06-07T15:12:44.641463", "level": "INFO", "message": "Iniciando servidor em modo Windows", "module": "app", "function": "<module>", "line": 502}
+{"timestamp": "2025-06-07T15:18:18.187890", "level": "INFO", "message": "Rate limiter usando armazenamento em mem\u00f3ria", "module": "app", "function": "<module>", "line": 139}
+{"timestamp": "2025-06-07T15:18:18.187890", "level": "INFO", "message": "Modelo Gemini inicializado com sucesso", "module": "app", "function": "<module>", "line": 144}
+{"timestamp": "2025-06-07T15:18:18.208404", "level": "INFO", "message": "Iniciando servidor em modo Windows", "module": "app", "function": "<module>", "line": 502}
+{"timestamp": "2025-06-07T15:18:21.954963", "level": "INFO", "message": "Rate limiter usando armazenamento em mem\u00f3ria", "module": "app", "function": "<module>", "line": 139}
+{"timestamp": "2025-06-07T15:18:21.978967", "level": "INFO", "message": "Modelo Gemini inicializado com sucesso", "module": "app", "function": "<module>", "line": 144}
+{"timestamp": "2025-06-07T15:18:21.990527", "level": "INFO", "message": "Iniciando servidor em modo Windows", "module": "app", "function": "<module>", "line": 502}

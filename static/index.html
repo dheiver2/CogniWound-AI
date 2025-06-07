@@ -6,6 +6,7 @@
     <title>Análise de Imagens Médicas</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -66,10 +67,38 @@
                                 <span class="material-icons">close</span>
                             </button>
                         </div>
-                        <div class="image-preview">
+                        <div class="image-viewer">
                             <img id="imagePreview" src="" alt="Pré-visualização">
+                            <div class="image-controls">
+                                <button class="zoom-control" id="zoomInBtn" title="Aumentar zoom">
+                                    <span class="material-icons">add</span>
+                                </button>
+                                <button class="zoom-control" id="zoomOutBtn" title="Diminuir zoom">
+                                    <span class="material-icons">remove</span>
+                                </button>
+                                <button class="zoom-control" id="resetZoomBtn" title="Resetar zoom">
+                                    <span class="material-icons">restart_alt</span>
+                                </button>
+                            </div>
                         </div>
                         <div class="action-buttons">
+                            <div class="quality-level-selector">
+                                <p class="quality-label">Nível de Rigor da Análise:</p>
+                                <div class="quality-buttons">
+                                    <button class="quality-btn active" data-quality="low">
+                                        <span class="material-icons">speed</span>
+                                        Baixo
+                                    </button>
+                                    <button class="quality-btn" data-quality="medium">
+                                        <span class="material-icons">speed</span>
+                                        Médio
+                                    </button>
+                                    <button class="quality-btn" data-quality="high">
+                                        <span class="material-icons">speed</span>
+                                        Alto
+                                    </button>
+                                </div>
+                            </div>
                             <button class="btn btn-success" id="analyzeBtn">
                                 <span class="material-icons">analytics</span>
                                 Analisar Imagem
@@ -82,50 +111,91 @@
                         <p>Analisando imagem...</p>
                     </div>
 
-                    <div id="errorMessage" class="error-message" style="display: none;"></div>
+                    <div id="analysisProgress" class="progress-container" style="display: none;">
+                        <div class="progress-bar">
+                            <div id="progressBarFill" class="progress-bar-fill"></div>
+                        </div>
+                        <p id="progressStatus" class="progress-status">Iniciando análise...</p>
+                    </div>
+
+                    <div id="errorContainer" class="error-container">
+                        <div class="error-content">
+                            <span class="material-icons error-icon">error_outline</span>
+                            <p id="errorMessage" class="error-message"></p>
+                            <button id="errorRetryBtn" class="btn btn-primary" style="display: none;">
+                                <span class="material-icons">refresh</span>
+                                Tentar Novamente
+                            </button>
+                            <button id="errorCloseBtn" class="btn btn-icon">
+                                <span class="material-icons">close</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="errorOverlay" class="error-overlay"></div>
                 </div>
             </section>
 
             <section id="results" class="tab-content">
-                <div class="results-container glass">
-                    <div class="results-header">
+                <div id="result-container" class="result-container" style="display: none;">
+                    <div class="result-header">
                         <h2>Resultado da Análise</h2>
-                        <div class="results-actions">
-                            <button class="btn btn-icon" id="printResultBtn" title="Imprimir Resultado">
-                                <span class="material-icons">print</span>
+                        <div class="result-actions">
+                            <button id="export-pdf" class="action-btn export-btn" title="Exportar para PDF">
+                                <i class="fas fa-file-pdf"></i> Exportar PDF
                             </button>
-                            <button class="btn btn-icon" id="downloadResultBtn" title="Baixar Resultado">
-                                <span class="material-icons">download</span>
+                            <button id="export-image" class="action-btn export-btn" title="Exportar Imagem">
+                                <i class="fas fa-image"></i> Exportar Imagem
+                            </button>
+                            <button id="share-result" class="action-btn share-btn" title="Compartilhar">
+                                <i class="fas fa-share-alt"></i> Compartilhar
                             </button>
                         </div>
                     </div>
-                    <div class="results-content">
-                        <div class="results-image">
-                            <img id="resultImage" src="" alt="Imagem Analisada">
+
+                    <div class="result-content">
+                        <div class="result-image-container">
+                            <img id="result-image" src="" alt="Imagem analisada">
+                            <div class="image-actions">
+                                <button id="zoom-in" class="zoom-btn" title="Aumentar Zoom">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                                <button id="zoom-out" class="zoom-btn" title="Diminuir Zoom">
+                                    <i class="fas fa-search-minus"></i>
+                                </button>
+                                <button id="reset-zoom" class="zoom-btn" title="Resetar Zoom">
+                                    <i class="fas fa-undo"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div class="results-analysis">
-                            <div class="analysis-section">
-                                <h3>Descrição Geral</h3>
-                                <div id="generalDescription" class="analysis-text"></div>
+
+                        <div class="result-details">
+                            <div class="analysis-info">
+                                <div class="info-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span id="analysis-date"></span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span id="analysis-time"></span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span id="analysis-quality"></span>
+                                </div>
                             </div>
-                            <div class="analysis-section">
-                                <h3>Características Visuais</h3>
-                                <div id="visualCharacteristics" class="analysis-text"></div>
-                            </div>
-                            <div class="analysis-section">
-                                <h3>Sinais de Infecção</h3>
-                                <div id="infectionSigns" class="analysis-text"></div>
-                            </div>
-                            <div class="analysis-section">
-                                <h3>Estágio da Ferida</h3>
-                                <div id="woundStage" class="analysis-text"></div>
-                            </div>
-                            <div class="analysis-section">
-                                <h3>Recomendações</h3>
-                                <div id="recommendations" class="analysis-text"></div>
+
+                            <div class="analysis-actions">
+                                <button id="new-analysis" class="action-btn new-btn" title="Nova Análise">
+                                    <i class="fas fa-plus"></i> Nova Análise
+                                </button>
+                                <button id="save-analysis" class="action-btn save-btn" title="Salvar Análise">
+                                    <i class="fas fa-save"></i> Salvar
+                                </button>
                             </div>
                         </div>
                     </div>
+
+                    <div id="analysis-result" class="analysis-result"></div>
                 </div>
             </section>
 
@@ -173,6 +243,7 @@
             </section>
         </main>
     </div>
+
     <script src="js/app.js"></script>
 </body>
 </html> 
