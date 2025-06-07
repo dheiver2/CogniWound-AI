@@ -1,83 +1,141 @@
 # CogniWound AI: Sistema Inteligente de Análise de Feridas
 
-**CogniWound AI** é um sistema web simples e eficiente para auxiliar na análise de imagens de feridas, utilizando o poder da inteligência artificial via Google Gemini API. O frontend é desenvolvido com tecnologias web puras (HTML, CSS e JavaScript), enquanto o backend utiliza Flask.
+<div align="center">
+  <img src="static/1.jpg" alt="CogniWound AI Logo" width="200"/>
+  <br/>
+  <p><strong>Sistema de Análise de Feridas com Inteligência Artificial</strong></p>
+</div>
 
-## Funcionalidades Principais
+## 📋 Sobre o Projeto
 
-*   **Interface Moderna e Responsiva:** Design amigável que se adapta a diferentes tamanhos de tela.
-*   **Upload Flexível:** Carregue imagens de feridas facilmente arrastando e soltando ou selecionando arquivos (JPG, JPEG, PNG com limite de 5MB).
-*   **Análise por IA:** Envie imagens para o backend para análise detalhada utilizando a API Gemini.
-*   **Resultados Estruturados:** Visualize a análise da ferida (descrição, características, sinais de infecção, estágio, recomendações) em um formato claro e organizado em uma aba dedicada.
-*   **Histórico Local:** Mantenha um registro das suas análises anteriores diretamente no navegador, com pré-visualização e opções de exclusão individual ou em massa.
-*   **Navegação Intuitiva:** Alterne facilmente entre as abas de Upload, Resultados, Histórico e Sobre.
-*   **Landing Page Informativa:** Uma página inicial apresentando o sistema e suas capacidades (`/`).
-*   **Identidade Visual:** Paleta de cores e logo personalizados (`static/1.jpg`).
+O CogniWound AI é uma solução inovadora que utiliza inteligência artificial (Google Gemini API) para auxiliar profissionais de saúde na análise de imagens de feridas. Desenvolvido com tecnologias web modernas e uma interface intuitiva, o sistema oferece análises detalhadas e recomendações baseadas em IA.
 
-## Configuração e Execução
+## ✨ Funcionalidades
 
-Siga estes passos para ter o CogniWound AI funcionando localmente:
+### 🎯 Principais Recursos
+- **Análise Inteligente**: Processamento de imagens via Google Gemini API
+- **Interface Moderna**: Design responsivo e acessível
+- **Upload Flexível**: Suporte para JPG, JPEG e PNG (até 5MB)
+- **Resultados Detalhados**: Análise completa com características, estágio e recomendações
+- **Histórico Local**: Armazenamento seguro das análises anteriores
+- **Landing Page Informativa**: Apresentação clara do sistema e suas capacidades
+
+### 🔍 Detalhes Técnicos
+- **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
+- **Backend**: Python com Flask
+- **IA**: Google Gemini API
+- **Armazenamento**: Local Storage (navegador)
+- **Design**: Interface responsiva e acessível
+
+## 🚀 Começando
 
 ### Pré-requisitos
+- Python 3.7 ou superior
+- Chave de API do Google Cloud (Gemini)
+- Navegador web moderno
+- Git (opcional)
 
-*   Python 3.7+
-*   Uma chave de API válida do Google Cloud Console com acesso à API Gemini.
+### Instalação
 
-### Passos
+1. **Clone o Repositório**
+   ```bash
+   git clone https://github.com/seu-usuario/CogniWound-AI.git
+   cd CogniWound-AI
+   ```
 
-1.  **Clone o Repositório:** (Se estiver usando Git)
-    ```bash
-    git clone <url-do-repositorio>
-    cd <nome-da-pasta>
-    ```
+2. **Configure o Ambiente Virtual**
+   ```bash
+   # Windows
+   python -m venv venv
+   .\venv\Scripts\activate
 
-2.  **Crie e Ative o Ambiente Virtual:**
-    ```bash
-    python -m venv venv
-    # Windows
-    .\venv\Scripts\activate
-    # macOS/Linux
-    source venv/bin/activate
-    ```
+   # Linux/MacOS
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
 
-3.  **Instale as Dependências:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+3. **Instale as Dependências**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-4.  **Configure a Chave da API Google:**
-    Crie um arquivo na raiz do projeto chamado `.env` e adicione sua chave de API Gemini:
-    ```dotenv
-    GOOGLE_API_KEY=SUA_CHAVE_AQUI
-    ```
-    Substitua `SUA_CHAVE_AQUI` pela sua chave real.
+4. **Configure as Variáveis de Ambiente**
+   Crie um arquivo `.env` na raiz do projeto:
+   ```env
+   GOOGLE_API_KEY=sua_chave_api_aqui
+   ```
 
-5.  **Adicione o Logo:**
-    Coloque o arquivo da imagem do logo (`1.jpg`) dentro da pasta `static/` na raiz do projeto.
+5. **Inicie o Servidor**
+   ```bash
+   python app.py
+   ```
 
-6.  **Execute o Servidor Flask:**
-    Com o ambiente virtual ativado, execute o script principal do Flask:
-    ```bash
-    python app.py
-    ```
+6. **Acesse a Aplicação**
+   - Landing Page: `http://localhost:5000/`
+   - Sistema: `http://localhost:5000/app`
 
-7.  **Acesse a Aplicação:**
-    Abra seu navegador e navegue para:
-    *   **Landing Page:** `http://localhost:5000/`
-    *   **Sistema de Análise:** `http://localhost:5000/app`
+## 💻 Como Usar
 
-## Uso Básico
+1. **Upload de Imagem**
+   - Acesse a aba "Upload"
+   - Arraste uma imagem ou clique para selecionar
+   - Aguarde o processamento
 
-Na página do Sistema de Análise (`/app`):
+2. **Análise**
+   - Visualize os resultados na aba "Resultados"
+   - Consulte o histórico de análises na aba "Histórico"
+   - Exporte ou compartilhe os resultados quando necessário
 
-1.  Na aba "Upload", selecione ou arraste a imagem da ferida.
-2.  Clique no botão "Analisar Imagem".
-3.  Vá para a aba "Resultados" para ver a análise detalhada.
-4.  A aba "Histórico" mostra suas análises passadas.
+## 🛠️ Tecnologias Utilizadas
 
-## Aviso Importante
+- **Frontend**
+  - HTML5
+  - CSS3 (com variáveis CSS e design responsivo)
+  - JavaScript (ES6+)
+  - Material Icons
 
-<<<<<<< HEAD
-Este sistema foi desenvolvido como uma ferramenta educacional e informativa. **As análises fornecidas pela IA NÃO substituem o diagnóstico ou aconselhamento de um profissional médico qualificado.** Sempre consulte um médico ou especialista em saúde para avaliação e tratamento adequados de feridas ou quaisquer outras condições médicas. 
-=======
-Este sistema foi desenvolvido como uma ferramenta educacional e informativa. **As análises fornecidas pela IA NÃO substituem o diagnóstico ou aconselhamento de um profissional médico qualificado.** Sempre consulte um médico ou especialista em saúde para avaliação e tratamento adequados de feridas ou quaisquer outras condições médicas. 
->>>>>>> 898a9c0d0367b5ebd641ce64e7ffbb47deed97b2
+- **Backend**
+  - Python 3.7+
+  - Flask
+  - Google Gemini API
+  - Python-dotenv
+
+## 📝 Notas Importantes
+
+### Aviso Médico
+⚠️ **IMPORTANTE**: Este sistema é uma ferramenta de apoio e não substitui o diagnóstico médico profissional. Sempre consulte um profissional de saúde qualificado para avaliação e tratamento adequados.
+
+### Limitações
+- Processamento apenas de imagens estáticas
+- Tamanho máximo de arquivo: 5MB
+- Requer conexão com internet para análise
+- Análises baseadas apenas nas imagens fornecidas
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas! Para contribuir:
+
+1. Faça um Fork do projeto
+2. Crie uma Branch para sua Feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a Branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 📞 Suporte
+
+Para suporte, envie um email para [seu-email@dominio.com] ou abra uma issue no GitHub.
+
+## 🙏 Agradecimentos
+
+- Google Gemini API
+- Comunidade Flask
+- Todos os contribuidores e usuários
+
+---
+<div align="center">
+  <sub>Desenvolvido com ❤️ para melhorar o cuidado com feridas</sub>
+</div>
