@@ -76,4 +76,8 @@ Na página do Sistema de Análise (`/app`):
 
 ## Aviso Importante
 
+<<<<<<< HEAD
 Este sistema foi desenvolvido como uma ferramenta educacional e informativa. **As análises fornecidas pela IA NÃO substituem o diagnóstico ou aconselhamento de um profissional médico qualificado.** Sempre consulte um médico ou especialista em saúde para avaliação e tratamento adequados de feridas ou quaisquer outras condições médicas. 
+=======
+Este sistema foi desenvolvido como uma ferramenta educacional e informativa. **As análises fornecidas pela IA NÃO substituem o diagnóstico ou aconselhamento de um profissional médico qualificado.** Sempre consulte um médico ou especialista em saúde para avaliação e tratamento adequados de feridas ou quaisquer outras condições médicas. 
+>>>>>>> 898a9c0d0367b5ebd641ce64e7ffbb47deed97b2
