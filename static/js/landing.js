@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hero = document.querySelector('.hero');
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
-        hero.style.backgroundPositionY = `${scrolled * 0.5}px`;
+        // hero.style.backgroundPositionY = `${scrolled * 0.5}px`; // Commented out parallax
     });
 
     // Navbar scroll effect
@@ -35,14 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
             nav.classList.remove('scrolled');
         }
 
-        // Efeito de esconder/mostrar navbar
-        if (currentScroll > lastScroll && currentScroll > 100) {
-            nav.style.transform = 'translateY(-100%)';
-        } else {
-            nav.style.transform = 'translateY(0)';
-        }
-
-        lastScroll = currentScroll;
+        // Efeito de esconder/mostrar navbar - REMOVED
+        // if (currentScroll > lastScroll && currentScroll > 100) {
+        // nav.style.transform = 'translateY(-100%)';
+        // } else {
+        // nav.style.transform = 'translateY(0)';
+        // }
+        // lastScroll = currentScroll; // lastScroll only needed for hide/show
     });
 
     // Animação de entrada para elementos
@@ -55,11 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                if (entry.target.classList.contains('feature-card') || 
-                    entry.target.classList.contains('step')) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
+                // Removed direct style manipulation, CSS will handle 'visible' class
+                // if (entry.target.classList.contains('feature-card') ||
+                // entry.target.classList.contains('step')) {
+                // entry.target.style.opacity = '1';
+                // entry.target.style.transform = 'translateY(0)';
+                // }
             }
         });
     }, observerOptions);
@@ -78,89 +78,89 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(element);
     });
 
-    // Efeito de hover com sombra dinâmica
-    function addDynamicShadow(element) {
-        element.addEventListener('mousemove', (e) => {
-            const rect = element.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+    // Efeito de hover com sombra dinâmica - COMMENTED OUT
+    // function addDynamicShadow(element) {
+    //     element.addEventListener('mousemove', (e) => {
+    //         const rect = element.getBoundingClientRect();
+    //         const x = e.clientX - rect.left;
+    //         const y = e.clientY - rect.top;
             
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
+    //         const centerX = rect.width / 2;
+    //         const centerY = rect.height / 2;
             
-            const deltaX = (x - centerX) / centerX;
-            const deltaY = (y - centerY) / centerY;
+    //         const deltaX = (x - centerX) / centerX;
+    //         const deltaY = (y - centerY) / centerY;
             
-            const shadowX = deltaX * 20;
-            const shadowY = deltaY * 20;
+    //         const shadowX = deltaX * 20;
+    //         const shadowY = deltaY * 20;
             
-            element.style.boxShadow = `
-                ${shadowX}px ${shadowY}px 30px rgba(0, 0, 0, 0.4),
-                inset 0 0 20px rgba(255, 255, 255, 0.05)
-            `;
-        });
+    //         element.style.boxShadow = `
+    //             ${shadowX}px ${shadowY}px 30px rgba(0, 0, 0, 0.4),
+    //             inset 0 0 20px rgba(255, 255, 255, 0.05)
+    //         `;
+    //     });
         
-        element.addEventListener('mouseleave', () => {
-            element.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.4)';
-        });
-    }
+    //     element.addEventListener('mouseleave', () => {
+    //         element.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.4)';
+    //     });
+    // }
 
-    // Efeito de scroll suave com fade
-    function addScrollFade() {
-        const elements = document.querySelectorAll('.feature-card, .step, .cta-content');
+    // Efeito de scroll suave com fade - COMMENTED OUT (handled by IntersectionObserver)
+    // function addScrollFade() {
+    //     const elements = document.querySelectorAll('.feature-card, .step, .cta-content');
         
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
+    //     const observer = new IntersectionObserver((entries) => {
+    //         entries.forEach(entry => {
+    //             if (entry.isIntersecting) {
+    //                 entry.target.style.opacity = '1';
+    //                 entry.target.style.transform = 'translateY(0)';
+    //             }
+    //         });
+    //     }, {
+    //         threshold: 0.1
+    //     });
         
-        elements.forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(20px)';
-            element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-            observer.observe(element);
-        });
-    }
+    //     elements.forEach(element => {
+    //         element.style.opacity = '0';
+    //         element.style.transform = 'translateY(20px)';
+    //         element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    //         observer.observe(element);
+    //     });
+    // }
 
-    // Efeito de hover com brilho sutil
-    function addGlowEffect() {
-        const cards = document.querySelectorAll('.feature-card, .step');
+    // Efeito de hover com brilho sutil - COMMENTED OUT
+    // function addGlowEffect() {
+    //     const cards = document.querySelectorAll('.feature-card, .step');
         
-        cards.forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
+    //     cards.forEach(card => {
+    //         card.addEventListener('mousemove', (e) => {
+    //             const rect = card.getBoundingClientRect();
+    //             const x = e.clientX - rect.left;
+    //             const y = e.clientY - rect.top;
                 
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
+    //             const centerX = rect.width / 2;
+    //             const centerY = rect.height / 2;
                 
-                const deltaX = (x - centerX) / centerX;
-                const deltaY = (y - centerY) / centerY;
+    //             const deltaX = (x - centerX) / centerX;
+    //             const deltaY = (y - centerY) / centerY;
                 
-                const glowX = deltaX * 50;
-                const glowY = deltaY * 50;
+    //             const glowX = deltaX * 50;
+    //             const glowY = deltaY * 50;
                 
-                card.style.background = `
-                    radial-gradient(
-                        circle at ${x}px ${y}px,
-                        rgba(255, 255, 255, 0.1) 0%,
-                        rgba(26, 26, 26, 0.8) 50%
-                    )
-                `;
-            });
+    //             card.style.background = `
+    //                 radial-gradient(
+    //                     circle at ${x}px ${y}px,
+    //                     rgba(255, 255, 255, 0.1) 0%,
+    //                     rgba(26, 26, 26, 0.8) 50%
+    //                 )
+    //             `;
+    //         });
             
-            card.addEventListener('mouseleave', () => {
-                card.style.background = 'rgba(26, 26, 26, 0.8)';
-            });
-        });
-    }
+    //         card.addEventListener('mouseleave', () => {
+    //             card.style.background = 'rgba(26, 26, 26, 0.8)';
+    //         });
+    //     });
+    // }
 
     // Efeito de digitação para o título
     const heroTitle = document.querySelector('.hero-content h1');
@@ -168,17 +168,17 @@ document.addEventListener('DOMContentLoaded', () => {
         typeWriter(heroTitle, heroTitle.textContent);
     }
     
-    // Animar gradiente do CTA
-    animateGradient();
+    // Animar gradiente do CTA - COMMENTED OUT
+    // animateGradient();
     
-    // Adicionar efeitos de sombra dinâmica
-    document.querySelectorAll('.feature-card, .step, .cta-content').forEach(addDynamicShadow);
+    // Adicionar efeitos de sombra dinâmica - COMMENTED OUT
+    // document.querySelectorAll('.feature-card, .step, .cta-content').forEach(addDynamicShadow);
     
-    // Adicionar efeito de scroll com fade
-    addScrollFade();
+    // Adicionar efeito de scroll com fade - COMMENTED OUT
+    // addScrollFade();
     
-    // Adicionar efeito de brilho
-    addGlowEffect();
+    // Adicionar efeito de brilho - COMMENTED OUT
+    // addGlowEffect();
 
     // Efeito de ripple para botões
     document.querySelectorAll('.btn').forEach(button => {
@@ -197,8 +197,10 @@ document.addEventListener('DOMContentLoaded', () => {
             ripple.style.top = `${y}px`;
 
             ripple.addEventListener('animationend', () => {
-                ripple.remove();
-            });
+                if (ripple.parentElement) { // Check if still attached before removing
+                    ripple.remove();
+                }
+            }, { once: true }); // Use { once: true } for the event listener
         });
     });
 }); 
@@ -207,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function typeWriter(element, text, speed = 50) {
     let i = 0;
     element.innerHTML = '';
-    element.style.opacity = '1';
+    element.style.opacity = '1'; // Ensure it's visible for typing
     
     function type() {
         if (i < text.length) {
@@ -220,20 +222,20 @@ function typeWriter(element, text, speed = 50) {
     type();
 }
 
-// Efeito de gradiente animado para o CTA
-function animateGradient() {
-    const cta = document.querySelector('.cta-content');
-    if (!cta) return;
+// Efeito de gradiente animado para o CTA - COMMENTED OUT
+// function animateGradient() {
+//     const cta = document.querySelector('.cta-content');
+//     if (!cta) return;
     
-    let angle = 0;
-    const animate = () => {
-        angle = (angle + 1) % 360;
-        const gradient = `linear-gradient(${angle}deg, 
-            rgba(255, 255, 255, 0.05) 0%, 
-            rgba(255, 255, 255, 0.02) 50%, 
-            rgba(255, 255, 255, 0.05) 100%)`;
-        cta.style.background = gradient;
-        requestAnimationFrame(animate);
-    };
-    animate();
-} 
+//     let angle = 0;
+//     const animate = () => {
+//         angle = (angle + 1) % 360;
+//         const gradient = `linear-gradient(${angle}deg,
+//             rgba(255, 255, 255, 0.05) 0%,
+//             rgba(255, 255, 255, 0.02) 50%,
+//             rgba(255, 255, 255, 0.05) 100%)`;
+//         cta.style.background = gradient;
+//         requestAnimationFrame(animate);
+//     };
+//     animate();
+// }

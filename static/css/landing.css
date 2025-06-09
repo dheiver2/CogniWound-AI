@@ -1,26 +1,43 @@
 :root {
-    /* Paleta monocromática refinada com maior contraste */
-    --black-900: #000000;    /* Fundo mais escuro */
-    --black-800: #0a0a0a;    /* Fundo de seções */
-    --black-700: #1a1a1a;    /* Cards e elementos secundários */
-    --black-600: #242424;    /* Bordas e divisões */
-    --black-500: #2d2d2d;    /* Elementos de destaque */
-    --black-400: #363636;    /* Hover states */
-    --black-300: #404040;    /* Textos secundários */
-    --black-200: #4a4a4a;    /* Elementos desabilitados */
-    --black-100: #545454;    /* Elementos menos importantes */
+    --bg-light: #F8F9FA;
+    --bg-white: #FFFFFF;
+    --text-dark: #212529;
+    --text-muted: #6C757D;
+    --primary-accent: #007BFF; /* Example Blue */
+    --primary-accent-hover: #0056b3;
+    --border-color-light: #DEE2E6;
+    --shadow-sm: 0 .125rem .25rem rgba(0,0,0,.075);
+    --shadow-md: 0 .5rem 1rem rgba(0,0,0,.15);
+    --border-radius: .375rem; /* Bootstrap's default */
+    --font-family-sans-serif: 'Roboto', sans-serif;
+    --line-height-base: 1.6;
+    --spacing-1: .25rem;
+    --spacing-2: .5rem;
+    --spacing-3: 1rem;
+    --spacing-4: 1.5rem;
+    --spacing-5: 3rem;
+    /* Old variables commented out for now, will remove later if not needed */
+    /*
+    --black-900: #000000;
+    --black-800: #0a0a0a;
+    --black-700: #1a1a1a;
+    --black-600: #242424;
+    --black-500: #2d2d2d;
+    --black-400: #363636;
+    --black-300: #404040;
+    --black-200: #4a4a4a;
+    --black-100: #545454;
 
-    --white-900: #ffffff;    /* Textos principais */
-    --white-800: #f8f8f8;    /* Textos de destaque */
-    --white-700: #f0f0f0;    /* Elementos interativos */
-    --white-600: #e0e0e0;    /* Bordas claras */
-    --white-500: #c0c0c0;    /* Textos secundários */
-    --white-400: #a0a0a0;    /* Elementos menos importantes */
-    --white-300: #808080;    /* Elementos desabilitados */
-    --white-200: #606060;    /* Textos terciários */
-    --white-100: #404040;    /* Elementos de fundo claros */
+    --white-900: #ffffff;
+    --white-800: #f8f8f8;
+    --white-700: #f0f0f0;
+    --white-600: #e0e0e0;
+    --white-500: #c0c0c0;
+    --white-400: #a0a0a0;
+    --white-300: #808080;
+    --white-200: #606060;
+    --white-100: #404040;
 
-    /* Cores principais atualizadas com maior contraste */
     --bg-primary: var(--black-900);
     --bg-secondary: var(--black-800);
     --bg-tertiary: var(--black-700);
@@ -30,31 +47,29 @@
     --accent-color: var(--white-900);
     --border-color: var(--white-600);
 
-    /* Gradientes refinados com maior contraste */
-    --gradient-hero: linear-gradient(135deg, 
-        rgba(0, 0, 0, 0.98) 0%, 
+    --gradient-hero: linear-gradient(135deg,
+        rgba(0, 0, 0, 0.98) 0%,
         rgba(10, 10, 10, 0.98) 50%,
         rgba(26, 26, 26, 0.98) 100%);
-    --gradient-card: linear-gradient(135deg, 
-        rgba(26, 26, 26, 0.98) 0%, 
+    --gradient-card: linear-gradient(135deg,
+        rgba(26, 26, 26, 0.98) 0%,
         rgba(36, 36, 36, 0.95) 100%);
-    --gradient-button: linear-gradient(135deg, 
-        var(--white-900) 0%, 
+    --gradient-button: linear-gradient(135deg,
+        var(--white-900) 0%,
         var(--white-700) 100%);
-    --gradient-text: linear-gradient(to right, 
-        var(--white-900) 0%, 
+    --gradient-text: linear-gradient(to right,
+        var(--white-900) 0%,
         var(--white-800) 100%);
-    
-    /* Efeitos modernos atualizados com maior contraste */
+
     --blur-effect: blur(16px);
     --glass-border: rgba(255, 255, 255, 0.15);
     --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
     --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
     --hover-transform: translateY(-8px) scale(1.02);
-    
-    /* Animações */
+
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    */
 }
 
 * {
@@ -64,21 +79,45 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: var(--text-secondary);
-    background-color: var(--bg-primary);
+    font-family: var(--font-family-sans-serif);
+    line-height: var(--line-height-base);
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-dark);
+    font-weight: 700; /* Heavier font-weight */
+    margin-top: var(--spacing-3);
+    margin-bottom: var(--spacing-2);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p {
+    margin-bottom: var(--spacing-3);
+    color: var(--text-muted);
 }
 
 /* Hero Section */
 .hero {
-    min-height: 100vh;
-    background: var(--gradient-hero);
+    min-height: 100vh; /* Keep min-height for now, adjust if needed */
+    background: var(--bg-white); /* New background */
     position: relative;
-    overflow: hidden;
-    padding: 2rem;
+    overflow: hidden; /* Keep overflow hidden */
+    padding: var(--spacing-5) var(--spacing-4); /* New padding */
+    display: flex; /* Added for centering hero content */
+    align-items: center; /* Added for centering hero content */
+    justify-content: center; /* Added for centering hero content */
 }
 
+/* Remove hero::before pseudo-element styling */
+/*
 .hero::before {
     content: '';
     position: absolute;
@@ -86,7 +125,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
+    background:
         radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
         url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="rgba(255,255,255,0.03)"/></svg>');
@@ -99,88 +138,121 @@ body {
     50% { background-position: 100% 100%; }
     100% { background-position: 0% 0%; }
 }
+*/
 
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    margin-bottom: 4rem;
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: var(--blur-effect);
-    -webkit-backdrop-filter: var(--blur-effect);
-    border-radius: var(--border-radius);
-    border-bottom: 1px solid var(--glass-border);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    transform: translateY(0);
-    transition: var(--transition-smooth);
+    padding: var(--spacing-3) var(--spacing-4); /* New padding */
+    margin-bottom: 0; /* Removed bottom margin as hero has padding */
+    background: var(--bg-white); /* New background */
+    box-shadow: var(--shadow-sm); /* New shadow */
+    /* Remove glassmorphism */
+    /* backdrop-filter: var(--blur-effect); */
+    /* -webkit-backdrop-filter: var(--blur-effect); */
+    /* border-radius: var(--border-radius); */ /* Might not need border radius for full width nav */
+    /* border-bottom: 1px solid var(--glass-border); */ /* Replaced by box-shadow */
+    /* transform: translateY(0); */
+    /* transition: var(--transition-smooth); */
+    position: fixed; /* Make nav fixed */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure nav is on top */
 }
 
+/* Remove scrolled state for nav as it's now fixed with shadow */
+/*
 .nav-container.scrolled {
     background: rgba(0, 0, 0, 0.98);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
+*/
 
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--spacing-2); /* Adjusted gap */
 }
 
 .landing-logo {
-    height: 40px; /* Tamanho do logo na nav */
+    height: 40px;
     width: auto;
 }
 
 .logo-text h1 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: var(--text-primary);
-    margin: 0;
+    font-size: 1.5rem; /* Existing size, ensure it uses new text color */
+    font-weight: 700; /* Make logo text bolder */
+    color: var(--text-dark); /* New color */
+    margin: 0; /* Reset margin for h1 inside logo */
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: var(--spacing-1); /* Adjusted gap */
     align-items: center;
 }
 
 .nav-links a {
-    color: var(--text-secondary);
+    color: var(--text-muted); /* New color */
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease;
+    padding: var(--spacing-2) var(--spacing-3); /* New padding */
+    border-radius: var(--border-radius); /* Add border radius for links */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition */
 }
 
 .nav-links a:hover {
-    color: var(--text-primary);
+    color: var(--primary-accent); /* New hover color */
+    background-color: var(--bg-light); /* Subtle background on hover */
 }
 
 .hero-content {
     text-align: center;
-    color: var(--text-primary);
+    color: var(--text-dark); /* Changed from text-primary */
     max-width: 800px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-    position: relative;
-    z-index: 2;
+    margin: 0 auto; /* Keep centered */
+    padding: var(--spacing-5) var(--spacing-4); /* New padding, but hero itself has padding now */
+    position: relative; /* Keep relative positioning if any child uses absolute */
+    z-index: 1; /* Lower z-index than nav */
 }
 
 .hero-content h1 {
-    font-size: 4rem;
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    animation: titleFade 1s ease-out;
+    font-size: 3.5rem; /* Adjusted size */
+    /* Remove text gradient */
+    /* background: var(--gradient-text); */
+    /* -webkit-background-clip: text; */
+    /* background-clip: text; */
+    color: var(--text-dark); /* New color */
+    /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); */ /* Remove text shadow */
+    /* animation: titleFade 1s ease-out; */ /* Remove animation for now */
+    margin-bottom: var(--spacing-3); /* Add margin */
 }
 
+/* Remove titleFade animation */
+/*
 @keyframes titleFade {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+*/
 
+/* General paragraph styles already set, this is more specific */
+.hero-content p.hero-subtitle { /* Target hero subtitle specifically if it's a p tag */
+    font-size: 1.25rem; /* Adjusted size */
+    margin-bottom: var(--spacing-4); /* New margin */
+    color: var(--text-muted); /* New color */
+    /* text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); */ /* Remove text shadow */
+    line-height: var(--line-height-base);
+    max-width: 600px;
+    margin-left: auto; /* Center if max-width is active */
+    margin-right: auto; /* Center if max-width is active */
+}
+
+
+/* This style was for a different p tag, hero-subtitle is now more specific */
+/*
 .hero-content p {
     font-size: 1.25rem;
     margin-bottom: 2rem;
@@ -189,51 +261,128 @@ body {
     line-height: 1.6;
     max-width: 600px;
 }
+*/
 
+/* This class seems to be used for the subtitle, ensure it's styled correctly */
 .hero-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 3rem;
-    color: var(--text-primary);
-    opacity: 0.9;
+    font-size: 1.25rem; /* Adjusted */
+    margin-bottom: var(--spacing-4); /* Adjusted */
+    color: var(--text-muted); /* New color */
+    /* opacity: 0.9; */ /* Remove opacity */
 }
+
 
 .hero-buttons {
     display: flex;
-    gap: 1rem;
+    gap: var(--spacing-3); /* Adjusted gap */
     justify-content: center;
 }
 
+/* Button Styles */
+.btn {
+    display: inline-block; /* Keep display */
+    padding: var(--spacing-2) var(--spacing-4); /* New padding */
+    border-radius: var(--border-radius); /* New border-radius */
+    text-decoration: none;
+    font-weight: 500; /* Adjusted font-weight */
+    border: 1px solid transparent; /* New border */
+    transition: all 0.3s ease; /* New transition */
+    cursor: pointer;
+    text-align: center;
+    /* Remove old button specific properties */
+    /* position: relative; */
+    /* overflow: hidden; */
+    /* z-index: 1; */
+}
+
+.btn.primary {
+    background-color: var(--primary-accent); /* New background */
+    color: var(--bg-white); /* New text color */
+    border-color: var(--primary-accent); /* New border color */
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); */ /* Remove old shadow */
+}
+
+.btn.primary:hover {
+    background-color: var(--primary-accent-hover); /* New hover background */
+    border-color: var(--primary-accent-hover); /* New hover border color */
+    color: var(--bg-white); /* Ensure text color remains white */
+    /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6); */ /* Remove old shadow */
+}
+
+/* Remove ::after pseudo-element for primary button */
+/*
+.btn.primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 100%);
+    opacity: 0;
+    transition: var(--transition-smooth);
+    z-index: -1;
+}
+
+.btn.primary:hover::after {
+    opacity: 1;
+}
+*/
+
+.btn.secondary {
+    background-color: transparent; /* New background */
+    color: var(--primary-accent); /* New text color */
+    border: 1px solid var(--primary-accent); /* Adjusted border */
+}
+
+.btn.secondary:hover {
+    background-color: var(--primary-accent); /* New hover background */
+    color: var(--bg-white); /* New hover text color */
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); */ /* Remove old shadow */
+}
+
+
 /* Features Section */
 .features {
-    padding: 6rem 2rem;
-    background: var(--bg-primary);
-    color: var(--text-secondary);
+    padding: var(--spacing-5) var(--spacing-4); /* New padding */
+    background: var(--bg-light); /* New background */
+    /* color: var(--text-secondary); */ /* Body default text color is fine */
 }
 
 .features h2 {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 4rem;
-    color: var(--text-primary);
+    /* font-size: 2.5rem; */ /* Already defined in general h2 styles */
+    margin-bottom: var(--spacing-5); /* Increased margin */
+    /* color: var(--text-primary); */ /* Already defined in general h2 styles */
 }
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly larger minmax */
+    gap: var(--spacing-4); /* New gap */
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .feature-card {
-    background: var(--gradient-card);
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--card-shadow);
-    transition: var(--transition-bounce);
-    position: relative;
-    overflow: hidden;
+    background-color: var(--bg-white); /* New background */
+    border: 1px solid var(--border-color-light); /* New border */
+    border-radius: var(--border-radius); /* New border-radius */
+    padding: var(--spacing-4); /* New padding */
+    box-shadow: var(--shadow-sm); /* New shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* New transition */
+    /* Remove glassmorphism and old styles */
+    /* position: relative; */
+    /* overflow: hidden; */
+    /* background: var(--gradient-card); */
+    /* border: 1px solid var(--glass-border); */
+    /* box-shadow: var(--card-shadow); */
+    /* transition: var(--transition-bounce); */
+    text-align: center; /* Center content in card */
 }
 
+/* Remove ::before pseudo-element for feature card */
+/*
 .feature-card::before {
     content: '';
     position: absolute;
@@ -245,220 +394,276 @@ body {
     opacity: 0;
     transition: var(--transition-smooth);
 }
+*/
 
 .feature-card:hover {
-    transform: var(--hover-transform);
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.7);
-    background: linear-gradient(135deg, 
-        rgba(36, 36, 36, 0.98) 0%, 
-        rgba(45, 45, 45, 0.98) 100%);
-    border-color: var(--white-700);
+    transform: translateY(-5px); /* New hover transform */
+    box-shadow: var(--shadow-md); /* New hover shadow */
+    /* Remove old hover styles */
+    /* background: linear-gradient(135deg,
+        rgba(36, 36, 36, 0.98) 0%,
+        rgba(45, 45, 45, 0.98) 100%); */
+    /* border-color: var(--white-700); */
 }
 
+/* Remove :hover::before */
+/*
 .feature-card:hover::before {
     opacity: 1;
 }
+*/
 
 .feature-card .material-icons {
-    font-size: 3.5rem;
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    transition: var(--transition-smooth);
+    color: var(--primary-accent); /* New color */
+    font-size: 2.5rem; /* New size */
+    margin-bottom: var(--spacing-3); /* New margin */
+    /* Remove gradient text */
+    /* background: var(--gradient-text); */
+    /* -webkit-background-clip: text; */
+    /* background-clip: text; */
+    /* color: transparent; */
+    /* transition: var(--transition-smooth); */
 }
 
 .feature-card h3 {
-    color: var(--white-900);
-    font-size: 1.5rem;
-    margin: 1rem 0;
-    font-weight: 700;
+    color: var(--text-dark); /* New color */
+    /* font-size: 1.5rem; */ /* General h3 style */
+    margin-top: 0; /* Remove margin if icon is providing space */
+    margin-bottom: var(--spacing-2); /* Adjusted margin */
+    /* font-weight: 700; */ /* General h3 style */
 }
 
 .feature-card p {
-    color: var(--white-700);
-    line-height: 1.6;
-    font-size: 1.1rem;
+    color: var(--text-muted); /* New color */
+    line-height: var(--line-height-base);
+    /* font-size: 1.1rem; */ /* Use default p font size or set one */
+    font-size: 0.95rem; /* Slightly smaller for card context */
 }
 
 /* How It Works Section */
 .how-it-works {
-    padding: 6rem 2rem;
-    background: var(--bg-secondary);
-    color: var(--text-secondary);
+    padding: var(--spacing-5) var(--spacing-4); /* New padding */
+    background: var(--bg-white); /* Alternating background */
+    /* color: var(--text-secondary); */ /* Default body color */
 }
 
 .how-it-works h2 {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 4rem;
-    color: var(--text-primary);
+    /* font-size: 2.5rem; */ /* General h2 style */
+    margin-bottom: var(--spacing-5); /* Increased margin */
+    /* color: var(--text-primary); */ /* General h2 style */
 }
 
 .steps-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly larger minmax */
+    gap: var(--spacing-4); /* New gap */
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .step {
-    padding: 2rem;
+    padding: var(--spacing-4); /* New padding */
     text-align: center;
-    position: relative;
-    background: var(--gradient-card);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--border-radius);
-    box-shadow: var(--card-shadow);
-    transition: var(--transition-bounce);
+    /* position: relative; */ /* Only if step-number is absolute to this */
+    background-color: var(--bg-white); /* New background (if section is --bg-light) or var(--bg-light) if section is white */
+    border: 1px solid var(--border-color-light); /* New border */
+    border-radius: var(--border-radius); /* New border-radius */
+    box-shadow: var(--shadow-sm); /* New shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* New transition */
+    /* Remove glassmorphism and old styles */
+    /* background: var(--gradient-card); */
+    /* border: 1px solid var(--glass-border); */
+    /* box-shadow: var(--card-shadow); */
+    /* transition: var(--transition-bounce); */
 }
 
+.step:hover {
+    transform: translateY(-5px); /* New hover transform */
+    box-shadow: var(--shadow-md); /* New hover shadow */
+    /* Remove old hover styles */
+    /* background: linear-gradient(135deg,
+        rgba(36, 36, 36, 0.98) 0%,
+        rgba(45, 45, 45, 0.98) 100%); */
+    /* border-color: var(--white-700); */
+}
+
+
 .step-number {
-    position: absolute;
-    top: -1rem;
-    left: -1rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    background: var(--gradient-button);
-    color: var(--black-900);
+    /* position: absolute; */ /* Removing absolute positioning */
+    /* top: -1rem; */
+    /* left: -1rem; */
+    width: 30px; /* New size */
+    height: 30px; /* New size */
+    background-color: var(--primary-accent); /* New background */
+    color: var(--bg-white); /* New text color */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    border: 2px solid var(--black-900);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    transition: var(--transition-smooth);
+    margin: 0 auto var(--spacing-3) auto; /* Centering and bottom margin */
+    /* border: 2px solid var(--black-900); */ /* Remove old border */
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); */ /* Remove old shadow */
+    /* transition: var(--transition-smooth); */
 }
 
-.step .material-icons {
-    font-size: 3rem;
-    color: var(--accent-color);
-    margin: 1rem 0;
-}
-
-.step:hover {
-    transform: var(--hover-transform);
-    box-shadow: var(--card-shadow);
-    background: linear-gradient(135deg, 
-        rgba(36, 36, 36, 0.98) 0%, 
-        rgba(45, 45, 45, 0.98) 100%);
-    border-color: var(--white-700);
-}
-
+/* Remove hover effect for step-number if step itself has hover */
+/*
 .step:hover .step-number {
     transform: scale(1.1) rotate(5deg);
 }
+*/
+
+.step .material-icons {
+    font-size: 2.5rem; /* Adjusted size */
+    color: var(--primary-accent); /* New color */
+    margin-bottom: var(--spacing-2); /* Adjusted margin */
+}
 
 .step h3 {
-    color: var(--white-900);
+    color: var(--text-dark); /* New color */
+    margin-top: 0;
+    margin-bottom: var(--spacing-2);
 }
 
 .step p {
-    color: var(--white-700);
+    color: var(--text-muted); /* New color */
+    font-size: 0.95rem; /* Slightly smaller for card context */
 }
 
 /* About Section */
 .about {
-    padding: 6rem 2rem;
-    background: var(--bg-primary);
-    color: var(--text-secondary);
+    padding: var(--spacing-5) var(--spacing-4); /* New padding */
+    background: var(--bg-light); /* Alternating background */
+    /* color: var(--text-secondary); */ /* Default body color */
 }
 
 .about-content {
-    max-width: 1000px;
+    max-width: 900px; /* Specified max-width */
     margin: 0 auto;
-    padding: 3rem;
-    background: var(--glass-bg);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    padding: var(--spacing-4); /* New padding */
+    background-color: var(--bg-white); /* New background */
+    border: 1px solid var(--border-color-light); /* Add border */
+    border-radius: var(--border-radius); /* Add radius */
+    box-shadow: var(--shadow-sm); /* Add shadow */
+    /* Remove glassmorphism */
+    /* background: var(--glass-bg); */
+    /* border: 1px solid var(--border-color); */
+    /* box-shadow: var(--shadow); */
+    /* backdrop-filter: blur(10px); */
+    /* -webkit-backdrop-filter: blur(10px); */
 }
 
 .about-content h2 {
-    color: var(--text-primary);
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    /* color: var(--text-primary); */ /* General h2 style */
+    /* font-size: 2rem; */ /* General h2 style */
+    margin-bottom: var(--spacing-4); /* Adjusted margin */
     text-align: center;
 }
 
-.about-content > p {
-    margin-bottom: 2rem;
-    line-height: 1.8;
+.about-content > p { /* General paragraphs within about section */
+    margin-bottom: var(--spacing-3); /* Adjusted margin */
+    line-height: var(--line-height-base);
+    color: var(--text-muted);
 }
 
 .about-features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
+    gap: var(--spacing-3); /* Adjusted gap */
+    margin-top: var(--spacing-4); /* Adjusted margin */
+    margin-bottom: var(--spacing-4); /* Add margin at bottom */
 }
 
 .about-feature {
     text-align: center;
+    padding: var(--spacing-3); /* Add some padding */
 }
 
 .about-feature .material-icons {
     font-size: 2.5rem;
-    color: var(--accent-color);
-    margin-bottom: 0.5rem;
+    color: var(--primary-accent); /* New color */
+    margin-bottom: var(--spacing-2); /* Adjusted margin */
 }
 
 .about-feature h3 {
-    color: var(--text-primary);
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    /* color: var(--text-primary); */ /* General h3 style */
+    font-size: 1.2rem; /* Keep specific size */
+    margin-bottom: var(--spacing-1); /* Adjusted margin */
 }
 
 .disclaimer {
-    margin-top: 3rem;
-    padding: 1.5rem;
-    border: 1px dashed var(--border-color);
-    border-radius: var(--border-radius-sm);
-    color: var(--text-secondary);
+    margin-top: var(--spacing-4); /* Adjusted margin */
+    padding: var(--spacing-3); /* New padding */
+    border: 1px solid var(--border-color-light); /* New border */
+    background-color: var(--bg-light); /* New background */
+    border-radius: var(--border-radius); /* New border-radius */
+    /* color: var(--text-secondary); */ /* Will inherit from p or use text-muted */
 }
 
 .disclaimer h3 {
-    color: var(--accent-color);
-    margin-top: 0;
-    margin-bottom: 1rem;
+    color: var(--primary-accent); /* New color */
+    margin-top: 0; /* Remove top margin for h3 in disclaimer */
+    margin-bottom: var(--spacing-2); /* Adjusted margin */
+    font-size: 1.25rem; /* Adjust size */
 }
 
 /* CTA Section */
 .cta {
-    padding: 6rem 2rem;
-    background: var(--bg-secondary);
+    padding: var(--spacing-5) var(--spacing-4); /* New padding */
+    background: var(--bg-light); /* New background */
     text-align: center;
-    color: var(--text-primary);
+    /* color: var(--text-primary); */ /* Not needed, cta-content handles colors */
 }
 
 .cta-content {
-    max-width: 800px;
+    max-width: 800px; /* Keep max-width */
     margin: 0 auto;
-    padding: 3rem;
-    background: var(--gradient-card);
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--card-shadow);
-    position: relative;
-    overflow: hidden;
+    padding: var(--spacing-5); /* New padding */
+    background-color: var(--primary-accent); /* New background */
+    color: var(--bg-white); /* New text color */
+    border-radius: var(--border-radius); /* New border-radius */
+    text-align: center; /* Ensure text is centered */
+    /* Remove glassmorphism and old styles */
+    /* border: 1px solid var(--glass-border); */
+    /* box-shadow: var(--card-shadow); */
+    /* position: relative; */ /* Only if ::before is used */
+    /* overflow: hidden; */ /* Only if ::before is used */
 }
 
-.cta h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: var(--white-800);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+.cta-content h2 { /* Renamed from .cta h2 to be more specific */
+    /* font-size: 2.5rem; */ /* General h2 style */
+    margin-top: 0;
+    margin-bottom: var(--spacing-3); /* Adjusted margin */
+    color: var(--bg-white); /* New color */
+    /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); */ /* Remove text shadow */
 }
 
-.cta p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: var(--white-500);
+.cta-content p { /* Renamed from .cta p */
+    font-size: 1.1rem; /* Adjusted size */
+    margin-bottom: var(--spacing-4); /* Adjusted margin */
+    color: rgba(255,255,255,0.85); /* New color */
+    max-width: 600px; /* Add max-width for readability */
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* CTA button specific styling */
+.cta-content .btn.primary {
+    background-color: var(--bg-white);
+    color: var(--primary-accent);
+    border-color: var(--bg-white);
+}
+.cta-content .btn.primary:hover {
+    background-color: var(--bg-light); /* Slightly off-white hover */
+    color: var(--primary-accent-hover);
+    border-color: var(--bg-light);
+}
+
+
+/* Remove ::before pseudo-element for cta-content */
+/*
 .cta-content::before {
     content: '';
     position: absolute;
@@ -466,8 +671,8 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, 
-        rgba(255, 255, 255, 0.03) 0%, 
+    background: radial-gradient(circle,
+        rgba(255, 255, 255, 0.03) 0%,
         transparent 70%);
     animation: rotate 20s linear infinite;
 }
@@ -476,42 +681,47 @@ body {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
+*/
 
 /* Footer */
 footer {
-    background: var(--black-900);
-    backdrop-filter: var(--blur-effect);
-    -webkit-backdrop-filter: var(--blur-effect);
-    border-top: 1px solid var(--glass-border);
-    color: var(--text-secondary);
-    padding: 3rem 2rem 1rem 2rem;
+    background: var(--bg-white); /* New background */
+    /* backdrop-filter: var(--blur-effect); */ /* Remove glassmorphism */
+    /* -webkit-backdrop-filter: var(--blur-effect); */ /* Remove glassmorphism */
+    border-top: 1px solid var(--border-color-light); /* New border */
+    color: var(--text-muted); /* New text color */
+    padding: var(--spacing-5) var(--spacing-4) var(--spacing-3) var(--spacing-4); /* New padding */
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+    gap: var(--spacing-4); /* Adjusted gap */
     max-width: 1200px;
-    margin: 0 auto 2rem auto;
+    margin: 0 auto var(--spacing-4) auto; /* Adjusted margin */
 }
 
 .footer-section h3 {
-    color: var(--white-800);
-    margin-bottom: 1rem;
+    color: var(--text-dark); /* New color */
+    margin-bottom: var(--spacing-3); /* Adjusted margin */
+    font-size: 1.1rem; /* Adjust size */
 }
 
 .footer-section p,
 .footer-section a {
-    color: var(--white-500);
+    color: var(--text-muted); /* New color */
     text-decoration: none;
-    margin-bottom: 0.5rem;
-    display: block;
+    margin-bottom: var(--spacing-2); /* Adjusted margin */
+    display: block; /* Keep display block for links */
 }
 
 .footer-section a:hover {
-    color: var(--white-700);
+    color: var(--primary-accent); /* New hover color */
+    text-decoration: underline; /* Add underline on hover for links */
 }
 
+/* Remove ::after pseudo-element for footer links */
+/*
 .footer-section a::after {
     content: '';
     position: absolute;
@@ -526,16 +736,20 @@ footer {
 .footer-section a:hover::after {
     width: 100%;
 }
+*/
 
 .footer-bottom {
     text-align: center;
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border-color);
+    margin-top: var(--spacing-4); /* Adjusted margin */
+    padding-top: var(--spacing-4); /* Adjusted padding */
+    border-top: 1px solid var(--border-color-light); /* New border color */
     font-size: 0.9rem;
+    color: var(--text-muted); /* Ensure text color */
 }
 
+/* General Button styles are already defined above, removing this duplicate section */
 /* Botões */
+/*
 .btn {
     display: inline-block;
     padding: 0.8rem 2rem;
@@ -558,8 +772,8 @@ footer {
 }
 
 .btn.primary:hover {
-    background: linear-gradient(135deg, 
-        var(--white-900) 0%, 
+    background: linear-gradient(135deg,
+        var(--white-900) 0%,
         var(--white-800) 100%);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
 }
@@ -592,8 +806,10 @@ footer {
     color: var(--black-900);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
+*/
 
-/* Glassmorphism */
+/* Remove Glassmorphism class */
+/*
 .glass {
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
@@ -602,80 +818,113 @@ footer {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
 }
+*/
 
 /* Responsividade */
 @media (max-width: 768px) {
     .hero-content h1 {
-        font-size: 2.5rem;
-        background: var(--gradient-text);
-        -webkit-background-clip: text;
-        background-clip: text;
+        font-size: 2.5rem; /* Keep adjusted size */
+        /* Remove gradient text if it was there */
+        /* background: var(--gradient-text); */
+        /* -webkit-background-clip: text; */
+        /* background-clip: text; */
     }
 
-    .hero-content p {
-        font-size: 1rem;
+    .hero-content p.hero-subtitle { /* More specific selector */
+        font-size: 1.1rem; /* Adjusted size */
     }
 
     .nav-container {
         flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
+        gap: 0; /* Reduce gap when stacked */
+        padding: var(--spacing-2) var(--spacing-3); /* Adjust padding */
+    }
+    .logo-container {
+        margin-bottom: var(--spacing-2); /* Add some space below logo */
     }
 
     .nav-links {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: column; /* Keep column direction */
+        gap: var(--spacing-1); /* Adjust gap */
+        width: 100%; /* Make links take full width */
+        align-items: center; /* Center links */
     }
 
     .nav-links a {
-        font-size: 1rem;
+        font-size: 1rem; /* Keep font size */
+        padding: var(--spacing-2); /* Adjust padding for smaller screens */
+        width: 100%;
+        text-align: center;
     }
 
     .hero-buttons {
         flex-direction: column;
+        gap: var(--spacing-2); /* Adjust gap */
     }
 
-    .btn {
-        width: 100%;
+    .btn { /* Ensure buttons in hero take full width */
+        width: 100%; /* This might be too general, check if specific buttons need this */
     }
+    .hero-buttons .btn { /* More specific */
+        width: auto; /* Let buttons in hero be auto width, or set a max-width */
+        max-width: 300px; /* Example max-width */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 
     .features h2,
     .how-it-works h2,
     .about-content h2,
-    .cta h2 {
-        font-size: 2rem;
+    .cta-content h2 { /* Target .cta-content h2 */
+        font-size: 1.75rem; /* Adjusted size for section titles */
     }
 
+    .features, .how-it-works, .about, .cta, footer {
+        padding-left: var(--spacing-3);
+        padding-right: var(--spacing-3);
+    }
+
+
     .about-content {
-        padding: 2rem;
+        padding: var(--spacing-3); /* Adjust padding */
     }
 
     .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
+        grid-template-columns: 1fr; /* Single column */
+        text-align: center; /* Center text in footer sections */
+    }
+    .footer-section h3 {
+        margin-top: var(--spacing-3); /* Add space above footer section titles if stacked */
     }
 
     .feature-card,
     .step {
-        transform: none !important;
-        margin: 1rem 0;
+        /* transform: none !important; */ /* Hover transform is subtle, can keep it */
+        margin-bottom: var(--spacing-3); /* Adjusted margin */
     }
 
-    .nav-container {
-        padding: 1rem;
+    .features-grid, .steps-container {
+        grid-template-columns: 1fr; /* Single column for cards/steps */
+        gap: var(--spacing-3);
     }
 
+
+    /* Remove old nav-links background override for dark theme */
+    /*
     .nav-links {
         background: rgba(0, 0, 0, 0.95);
         backdrop-filter: var(--blur-effect);
         -webkit-backdrop-filter: var(--blur-effect);
     }
+    */
 }
 
 /* Dark Mode (pode ser removido se a paleta escura for a única) */
 /* @media (prefers-color-scheme: dark) { } */
 
-/* Animações */
+/* Animações - Commenting out for now, can be re-added if desired */
+/*
 .feature-card,
 .step,
 .cta-content,
@@ -701,8 +950,10 @@ footer {
         transform: translateY(0);
     }
 }
+*/
 
-/* Animações de Scroll */
+/* Animações de Scroll - Commenting out for now */
+/*
 .animate-on-scroll {
     opacity: 0;
     transform: translateY(30px);
@@ -713,8 +964,10 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+*/
 
-/* Animações de Loading */
+/* Animações de Loading - Commenting out for now */
+/*
 .loading {
     position: relative;
     overflow: hidden;
@@ -739,4 +992,52 @@ footer {
 @keyframes loading {
     0% { left: -100%; }
     100% { left: 200%; }
-} 
+}
+*/
+
+/* Styles for simplified scroll animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Optional: Enhanced shadow for scrolled navbar */
+.nav-container.scrolled {
+    box-shadow: 0 .125rem .5rem rgba(0,0,0,.1); /* A bit more pronounced than default --shadow-sm */
+}
+
+/* Styles for button ripple effect */
+.btn { /* Ensure .btn has position: relative if not already set elsewhere */
+    position: relative;
+    overflow: hidden; /* Important to contain the ripple */
+}
+
+.btn .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7); /* For primary buttons */
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+    pointer-events: none; /* Ensure it doesn't interfere with button clicks */
+}
+
+.btn.secondary .ripple { /* Example for secondary button */
+    background-color: rgba(0, 0, 0, 0.1); /* Darker ripple for light buttons */
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+#main-content-area { /* Added an ID for the main content area */
+    padding-top: 70px; /* Adjust this value based on the height of the fixed nav */
+}

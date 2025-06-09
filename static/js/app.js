@@ -147,7 +147,47 @@ function initializeApp() {
     // Inicializa o histórico
     updateHistoryDisplay();
     
+    // Adiciona efeito de ripple aos botões
+    addButtonRippleEffect();
+
     console.log('Aplicação inicializada com sucesso!');
+}
+
+// Função para adicionar efeito de ripple aos botões
+function addButtonRippleEffect() {
+    document.querySelectorAll('.btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Previne ripple em botões desabilitados ou elementos que não deveriam ter (ex: tab-btn se tiverem seu próprio feedback)
+            if (this.disabled || this.classList.contains('tab-btn') && this.classList.contains('active')) { // Example: no ripple on active tabs
+                return;
+            }
+
+            const existingRipple = this.querySelector('.ripple');
+            if(existingRipple) existingRipple.remove();
+
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple');
+            // Assegura que o ripple seja adicionado ao botão clicado.
+            // É importante que o CSS para .btn tenha position: relative e overflow: hidden.
+            this.appendChild(ripple);
+
+            const rect = this.getBoundingClientRect(); // Use 'this' para referência correta ao botão
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+
+            ripple.style.width = ripple.style.height = `${size}px`;
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+
+            // Limpa o ripple após a animação
+            ripple.addEventListener('animationend', () => {
+                if (ripple.parentElement) {
+                   ripple.remove();
+                }
+            }, { once: true });
+        });
+    });
 }
 
 // Aguarda o DOM estar completamente carregado

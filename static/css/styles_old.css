@@ -1,0 +1,1691 @@
+:root {
+    --bg-light: #F8F9FA;
+    --bg-white: #FFFFFF;
+    --text-dark: #212529; /* For primary text */
+    --text-body: #343A40; /* Slightly softer for body copy */
+    --text-muted: #6C757D; /* For secondary text, placeholders */
+    --primary-accent: #007BFF; /* Professional Blue */
+    --primary-accent-hover: #0056b3;
+    --secondary-accent: #6C757D; /* Muted Grey for less emphasis buttons */
+    --secondary-accent-hover: #5A6268;
+
+    --success-color: #28A745;
+    --success-color-hover: #1E7E34;
+    --error-color: #DC3545;
+    --error-color-hover: #B02A37;
+    --warning-color: #FFC107;
+
+    --border-color-light: #DEE2E6;
+    --border-color-medium: #CED4DA;
+
+    --shadow-sm: 0 .125rem .25rem rgba(0,0,0,.075);
+    --shadow-md: 0 .25rem .5rem rgba(0,0,0,.1);
+    --shadow-lg: 0 .5rem 1.5rem rgba(0,0,0,.175);
+
+    --border-radius-sm: .25rem;
+    --border-radius: .375rem;
+    --border-radius-lg: .5rem;
+
+    --font-family-sans-serif: 'Inter', sans-serif; /* Keep Inter, it's a good modern font */
+    --line-height-base: 1.6;
+
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+
+    /* Old variables commented out for now */
+    /*
+    --primary-900: #1a365d;
+    --primary-800: #2c5282;
+    --primary-700: #2b6cb0;
+    --primary-600: #3182ce;
+    --primary-500: #4299e1;
+    --primary-400: #63b3ed;
+    --primary-300: #90cdf4;
+    --primary-200: #bee3f8;
+    --primary-100: #ebf8ff;
+
+    --secondary-900: #1a202c;
+    --secondary-800: #2d3748;
+    --secondary-700: #4a5568;
+    --secondary-600: #718096;
+    --secondary-500: #a0aec0;
+    --secondary-400: #cbd5e0;
+    --secondary-300: #e2e8f0;
+    --secondary-200: #edf2f7;
+    --secondary-100: #f7fafc;
+
+    --success-500: #48bb78;
+    --success-600: #38a169;
+    --warning-500: #ed8936;
+    --warning-600: #dd6b20;
+    --error-500: #f56565;
+    --error-600: #e53e3e;
+
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --text-tertiary: var(--secondary-500);
+    --text-on-primary: white;
+    --text-on-secondary: var(--secondary-900);
+
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2a2a2a;
+    --bg-tertiary: var(--secondary-200);
+    --bg-overlay: rgba(0, 0, 0, 0.5);
+
+    --border-light: var(--secondary-200);
+    --border-medium: var(--secondary-300);
+    --border-dark: var(--secondary-400);
+
+    --shadow-sm-old: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md-old: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg-old: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+    --glass-bg: rgba(42, 42, 42, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    --glass-blur: blur(12px);
+    --glass-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --spacing-3xl: 4rem;
+
+    --radius-sm-old: 4px;
+    --radius-md-old: 8px;
+    --radius-lg-old: 12px;
+    --radius-xl: 1.5rem;
+    --radius-full: 9999px;
+
+    --accent-color: #888888;
+    --border-color: #444444;
+
+    --primary-button-bg: var(--accent-color);
+    --primary-button-text: var(--bg-primary);
+    --primary-button-hover-bg: #aaaaaa;
+
+    --success-button-bg: #28a745;
+    --success-button-text: #ffffff;
+    --success-button-hover-bg: #218838;
+
+    --danger-button-bg: #dc3545;
+    --danger-button-text: #ffffff;
+    --danger-button-hover-bg: #c82333;
+
+    --border-radius-old: 8px;
+
+    --gradient-primary: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-800) 100%);
+    --gradient-secondary: linear-gradient(135deg, var(--secondary-700) 0%, var(--secondary-900) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-700) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    */
+}
+
+/* Reset e estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-sans-serif);
+    background-color: var(--bg-light);
+    color: var(--text-body);
+    line-height: var(--line-height-base);
+    margin: 0; /* Explicitly set margin to 0 */
+    padding: 0; /* Explicitly set padding to 0 */
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg); /* Consistent padding */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-dark);
+    margin-top: var(--spacing-lg); /* Add top margin for headings */
+    margin-bottom: var(--spacing-md);
+    font-weight: 600; /* Slightly less bold than landing page for app context */
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1rem; }
+
+p {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-body); /* Ensure paragraphs use the softer body text */
+}
+
+
+/* Header */
+.header {
+    background-color: var(--bg-white);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color-light);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-xl);
+    /* Original flex properties */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    gap: var(--spacing-md); /* Gap between items if they wrap */
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allow content to grow */
+    /* margin-right: 1rem; */ /* Replaced by gap on parent */
+}
+
+.header h1 {
+    color: var(--text-dark); /* Updated color */
+    margin: 0; /* Reset margin */
+    font-size: 1.75rem; /* Adjusted size for app header */
+    line-height: 1.2;
+}
+
+.header .subtitle {
+    color: var(--text-muted); /* Updated color */
+    margin: var(--spacing-xs) 0 0 0; /* Adjusted margin */
+    font-size: 0.9rem; /* Adjusted size */
+}
+
+.app-logo { /* Assuming this is part of the header */
+    height: 50px; /* Adjusted size */
+    width: auto;
+    flex-shrink: 0;
+}
+
+/* General button styles will be defined later, this will be a .btn .btn-secondary */
+.back-to-landing {
+    /* background-color: var(--secondary-button-bg); */ /* Will use new var */
+    /* color: var(--secondary-button-text); */ /* Will use new var */
+    /* border: 1px solid var(--border-color); */ /* Will use new var */
+    padding: var(--spacing-sm) var(--spacing-md); /* Adjusted padding */
+    font-size: 0.9rem;
+    display: inline-flex; /* Use inline-flex for button with icon */
+    align-items: center;
+    gap: var(--spacing-sm);
+    text-decoration: none;
+    border-radius: var(--border-radius); /* Use new var */
+    transition: all 0.3s ease; /* Use new var for transition */
+    flex-shrink: 0; /* Keep shrink behavior */
+}
+
+/* Hover and specific styles will be handled by .btn classes */
+/*
+.back-to-landing:hover {
+    background-color: var(--secondary-button-hover-bg);
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+}
+*/
+
+.back-to-landing .material-icons {
+    font-size: 1.1rem; /* Keep icon size */
+}
+
+/* Navegação */
+.tabs {
+    background-color: var(--bg-white);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-lg);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+}
+
+.tab-buttons {
+    display: flex;
+    gap: var(--spacing-sm); /* Use new var */
+    justify-content: center;
+}
+
+.tab-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border: none;
+    background-color: transparent; /* New background */
+    color: var(--text-muted); /* New color */
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: var(--border-radius); /* Use new var */
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    color: var(--primary-accent); /* New hover color */
+    background-color: var(--bg-light); /* New hover background */
+}
+
+.tab-btn.active {
+    background-color: var(--primary-accent); /* New active background */
+    color: var(--bg-white); /* New active text color */
+    box-shadow: var(--shadow-md); /* New active shadow */
+}
+
+/* Conteúdo principal */
+.main-content {
+    position: relative; /* Keep relative for potential absolute children like modals */
+    min-height: 300px; /* Adjusted min-height */
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease; /* Keep fadeIn animation */
+}
+
+.tab-content.active {
+    display: block;
+    /* Removed background, padding, shadow from here. Will apply to inner containers if needed. */
+    /* background-color: var(--bg-white); */
+    /* padding: var(--spacing-xl); */
+    /* border-radius: var(--border-radius-lg); */
+    /* box-shadow: var(--shadow-sm); */
+    padding: var(--spacing-xl); /* Added padding as per instruction 1.e */
+}
+
+/* Upload Section Styles */
+.upload-container {
+    background-color: var(--bg-white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    margin: 0 auto var(--spacing-xl) auto; /* Centered with bottom margin */
+    max-width: 800px;
+}
+
+.upload-header { /* This class seems to be unused in HTML, but styles are good for a generic header */
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.upload-header h2 { /* Assuming h2 inside .upload-container or .upload-header */
+    color: var(--text-dark);
+    font-size: 1.5rem; /* Adjusted size */
+    margin-bottom: var(--spacing-sm);
+}
+
+.upload-header p { /* Assuming p inside .upload-container or .upload-header */
+    color: var(--text-muted);
+    font-size: 1rem; /* Adjusted size */
+}
+
+.upload-area {
+    border: 2px dashed var(--border-color-medium);
+    border-radius: var(--border-radius); /* Use new var */
+    padding: var(--spacing-xl); /* Use new var */
+    text-align: center;
+    background-color: var(--bg-light); /* New background */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-bottom: var(--spacing-lg); /* Use new var */
+}
+
+.upload-area:hover {
+    background-color: #E9ECEF; /* Slightly darker light shade */
+    border-color: var(--primary-accent);
+}
+
+.upload-area.drag-over { /* Keep drag-over style */
+    background-color: #E0E0E0; /* Darker for drag over */
+    border-color: var(--primary-accent-hover);
+    transform: scale(1.02);
+}
+
+.upload-icon { /* Assuming this is for an icon inside upload-area */
+    font-size: 2.5rem; /* Adjusted size */
+    color: var(--primary-accent);
+    margin-bottom: var(--spacing-md);
+}
+
+.upload-text { /* Text like "Drag & Drop" */
+    color: var(--text-dark);
+    font-size: 1.1rem; /* Adjusted size */
+    margin-bottom: var(--spacing-xs);
+}
+
+.upload-subtext { /* Smaller text like "or click to select" */
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* .upload-button will be replaced by .btn .btn-primary for #selectFileBtn */
+/*
+.upload-button {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+}
+
+.upload-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+    background: linear-gradient(135deg, #2980b9, #2573a7);
+}
+
+.upload-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(52, 152, 219, 0.2);
+}
+
+.upload-button i {
+    font-size: 1.2rem;
+}
+*/
+
+/* Preview Container Styles */
+.preview-container {
+    background-color: var(--bg-white);
+    border-radius: var(--border-radius); /* Use new var */
+    padding: var(--spacing-lg); /* Use new var */
+    box-shadow: var(--shadow-sm); /* Use new var */
+    margin-top: var(--spacing-lg); /* Use new var */
+}
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md); /* Use new var */
+    padding-bottom: var(--spacing-md); /* Use new var */
+    border-bottom: 1px solid var(--border-color-light); /* Use new var */
+}
+
+.preview-header h3 {
+    color: var(--text-dark); /* Use new var */
+    margin: 0;
+    font-size: 1.25rem; /* Adjusted size */
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm); /* Use new var */
+}
+
+.preview-header h3 i { /* Assuming icon within h3 */
+    color: var(--primary-accent); /* Use new var */
+}
+
+/* .remove-image-btn will be .btn .btn-icon .btn-danger or similar */
+/*
+.remove-image-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.2);
+}
+
+.remove-image-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+.remove-image-btn:active {
+    transform: translateY(0);
+}
+
+.remove-image-btn i {
+    font-size: 1.2rem;
+}
+*/
+
+.image-viewer {
+    position: relative; /* Keep for image-controls */
+    background-color: var(--bg-light); /* Use new var */
+    border-radius: var(--border-radius-sm); /* Use new var */
+    padding: var(--spacing-sm); /* Use new var */
+    margin-bottom: var(--spacing-md); /* Use new var */
+    border: 1px solid var(--border-color-light); /* Use new var */
+}
+
+.image-viewer img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-sm); /* Match parent padding */
+    display: block;
+    margin: 0 auto;
+}
+
+.image-controls {
+    position: absolute;
+    bottom: var(--spacing-md); /* Use new var */
+    right: var(--spacing-md); /* Use new var */
+    display: flex;
+    gap: var(--spacing-sm); /* Use new var */
+    background: var(--bg-white); /* Controls on white background */
+    padding: var(--spacing-sm); /* Use new var */
+    border-radius: var(--border-radius); /* Use new var */
+    box-shadow: var(--shadow-md); /* Use new var */
+    /* backdrop-filter: blur(5px); */ /* Removed blur for cleaner look */
+}
+
+/* .zoom-control styling will be handled by .btn .btn-icon */
+/*
+.zoom-control {
+    width: auto;
+    height: auto;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    background: var(--bg-white);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xs);
+
+}
+
+.zoom-control:hover {
+    background: var(--bg-light);
+    color: var(--primary-accent);
+
+
+}
+
+
+.zoom-control:active {
+    transform: translateY(0);
+}
+
+
+.zoom-control i {
+    font-size: 1.2rem;
+}
+*/
+
+/* Quality Level Selector Styles */
+.quality-level-selector {
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    border: 1px solid var(--border-color-light);
+}
+
+.quality-label {
+    color: var(--text-dark);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.quality-label i.material-icons { /* Target material icons */
+    color: var(--primary-accent);
+    font-size: 1.2rem; /* Ensure icon size is appropriate */
+}
+
+.quality-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-sm) 0;
+}
+
+.quality-btn { /* These will be .btn and share some styling */
+    flex: 1;
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color-medium);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-sm) var(--spacing-md);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    font-weight: 500;
+    color: var(--text-body);
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); */
+}
+
+.quality-btn:hover {
+    border-color: var(--primary-accent);
+    color: var(--primary-accent);
+    background-color: var(--bg-light); /* Add subtle background hover */
+    /* transform: translateY(-2px); */
+    /* box-shadow: 0 4px 12px rgba(52, 152, 219, 0.15); */
+}
+
+.quality-btn.active {
+    background-color: var(--primary-accent);
+    border-color: var(--primary-accent);
+    color: var(--bg-white);
+    /* box-shadow: 0 4px 15px rgba(52, 152, 219, 0.25); */
+}
+
+.quality-btn i.material-icons { /* Target material icons */
+    font-size: 1.1rem;
+}
+
+/* Remove specific quality button border colors, active state is enough */
+/*
+.quality-btn[data-quality="low"] {
+    border-color: #2ecc71;
+}
+
+.quality-btn[data-quality="medium"] {
+    border-color: #f1c40f;
+}
+
+.quality-btn[data-quality="high"] {
+    border-color: #e74c3c;
+}
+
+.quality-btn.active[data-quality="low"] {
+    background: #2ecc71;
+    border-color: #2ecc71;
+}
+
+.quality-btn.active[data-quality="medium"] {
+    background: #f1c40f;
+    border-color: #f1c40f;
+}
+
+.quality-btn.active[data-quality="high"] {
+    background: #e74c3c;
+    border-color: #e74c3c;
+}
+*/
+
+/* Action Buttons Container */
+.action-buttons { /* This container might wrap #analyzeBtn */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+/* Styling for #analyzeBtn will be via .btn .btn-success */
+/*
+.analyze-btn {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: white;
+    border: none;
+    padding: 1.2rem 2rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.2);
+}
+
+.analyze-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.3);
+    background: linear-gradient(135deg, #27ae60, #219a52);
+}
+
+.analyze-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(46, 204, 113, 0.2);
+}
+
+.analyze-btn i {
+    font-size: 1.3rem;
+}
+*/
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .upload-container, .preview-container, .result-container, .history-container, .about-container { /* Added more containers */
+        padding: var(--spacing-md); /* Adjust padding for smaller screens */
+        margin-left: var(--spacing-sm); /* Add side margin for smaller screens */
+        margin-right: var(--spacing-sm);
+    }
+
+    .upload-area {
+        padding: var(--spacing-lg) var(--spacing-md); /* Adjust padding */
+    }
+
+    .quality-buttons {
+        flex-direction: column; /* Stack quality buttons */
+    }
+
+    .quality-btn {
+        width: 100%; /* Full width for stacked buttons */
+    }
+
+    .preview-header {
+        flex-direction: column;
+        gap: var(--spacing-sm); /* Adjust gap */
+        text-align: center;
+    }
+
+    .image-controls {
+        position: static; /* Static positioning for controls */
+        justify-content: center;
+        margin-top: var(--spacing-md); /* Adjust margin */
+        background: transparent; /* Remove background if it looks odd when static */
+        box-shadow: none; /* Remove shadow */
+    }
+
+    .analyze-btn { /* If it's a specific class and not .btn */
+        padding: var(--spacing-md); /* Adjust padding */
+        font-size: 1rem; /* Adjust font size */
+    }
+}
+
+/* Result Container Styles */
+.result-container {
+    background-color: var(--bg-white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-xl);
+    margin: var(--spacing-xl) auto;
+    max-width: 1200px;
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color-light);
+}
+
+.result-header h2 {
+    color: var(--text-dark);
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.result-actions { /* Container for action buttons like export/share */
+    display: flex;
+    gap: var(--spacing-md);
+}
+/* Individual action buttons (.export-btn, .share-btn) will use .btn and .btn-primary or .btn-secondary */
+
+
+.result-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+}
+
+.result-image-container {
+    position: relative;
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    border: 1px solid var(--border-color-light);
+}
+
+.result-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-sm);
+    object-fit: contain;
+}
+
+.image-actions { /* This is same as .image-controls in preview */
+    position: absolute;
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    display: flex;
+    gap: var(--spacing-sm);
+    background: var(--bg-white);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+}
+/* .zoom-btn inside .image-actions will use .btn .btn-icon */
+
+
+.result-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.analysis-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color-light);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--text-body);
+    font-weight: 400;
+    font-size: 0.95rem;
+}
+
+.info-item i.material-icons {
+    color: var(--primary-accent);
+    font-size: 1.25rem;
+}
+
+.info-item span {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.analysis-actions { /* Container for New Analysis / Save to History buttons */
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: auto;
+}
+/* .new-btn, .save-btn will use .btn classes e.g. .btn-danger, .btn-primary */
+
+
+.analysis-result { /* Overall container for all analysis sections */
+    border-radius: var(--border-radius);
+    padding: 0;
+    margin-top: var(--spacing-lg);
+}
+
+.analysis-section { /* Individual sections like "Tecido Necrótico", "Granulação" */
+    background-color: var(--bg-white);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid var(--border-color-light);
+    box-shadow: var(--shadow-sm);
+}
+
+.analysis-section:last-child {
+    margin-bottom: 0;
+}
+
+.analysis-section h3 {
+    color: var(--text-dark);
+    margin: 0 0 var(--spacing-md) 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.analysis-section h3::before { /* Decorative element for section titles */
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 1em;
+    background-color: var(--primary-accent);
+    border-radius: 2px;
+}
+
+.analysis-text {
+    color: var(--text-body);
+    line-height: var(--line-height-base);
+    white-space: pre-line;
+    font-size: 0.95rem;
+}
+
+.analysis-text ul {
+    margin: var(--spacing-sm) 0 var(--spacing-sm) var(--spacing-md);
+    padding-left: var(--spacing-md);
+}
+
+.analysis-text li {
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-body);
+}
+
+/* Responsive Design for Results */
+@media (max-width: 768px) {
+    .result-content {
+        grid-template-columns: 1fr;
+    }
+
+    .result-header {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+
+    .result-actions {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .analysis-info {
+        grid-template-columns: 1fr;
+    }
+
+    .analysis-actions {
+        flex-direction: column;
+    }
+    .analysis-actions .btn {
+        width: 100%;
+    }
+
+
+    .image-actions {
+        position: static;
+        justify-content: center;
+        margin-top: var(--spacing-md);
+        background: transparent;
+        box-shadow: none;
+    }
+}
+
+
+/* Histórico */
+.history-container {
+    background-color: var(--bg-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-top: var(--spacing-xl); /* Consistent margin */
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg); /* Use new var */
+    padding-bottom: var(--spacing-md); /* Use new var */
+    border-bottom: 1px solid var(--border-color-light); /* Use new var */
+    flex-wrap: wrap;
+    gap: var(--spacing-md); /* Use new var */
+}
+
+.history-title h2 {
+    color: var(--text-dark); /* Use new var */
+    margin: 0;
+    font-size: 1.5rem; /* Adjusted size */
+}
+/* #clearHistoryBtn will be styled as .btn .btn-danger */
+
+.history-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted minmax */
+    gap: var(--spacing-lg); /* Use new var */
+}
+
+.history-item {
+    display: flex; /* Keep flex for layout */
+    background-color: var(--bg-white); /* New background */
+    border: 1px solid var(--border-color-light); /* New border */
+    transition: all 0.3s ease; /* General transition */
+    overflow: hidden;
+    border-radius: var(--border-radius); /* Use new var */
+    box-shadow: var(--shadow-sm); /* New shadow */
+}
+
+.history-item:hover {
+    transform: translateY(-3px); /* Subtle lift */
+    box-shadow: var(--shadow-md); /* Slightly larger shadow on hover */
+    border-color: var(--primary-accent); /* Accent border on hover */
+}
+
+.history-preview {
+    width: 100px; /* Adjusted size */
+    height: 100px; /* Adjusted size */
+    flex-shrink: 0;
+    background-color: var(--bg-light); /* Use new var */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-right: 1px solid var(--border-color-light); /* Add border to separate preview */
+}
+
+.history-preview img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm); /* Round corners if image touches edge */
+}
+
+.history-info {
+    flex-grow: 1;
+    padding: var(--spacing-md); /* Use new var */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes actions to bottom if item height varies */
+}
+
+.history-info h3 {
+    color: var(--text-dark); /* Use new var */
+    margin: 0 0 var(--spacing-xs) 0; /* Adjusted margin */
+    font-size: 1.1rem;
+}
+
+.history-date {
+    color: var(--text-muted); /* Use new var */
+    font-size: 0.8rem; /* Adjusted size */
+    margin-bottom: var(--spacing-sm); /* Use new var */
+}
+
+.history-actions { /* Container for view/delete buttons in history item */
+    display: flex;
+    gap: var(--spacing-sm); /* Use new var */
+    margin-top: auto; /* Pushes actions to the bottom */
+}
+/* Buttons inside .history-actions will use .btn .btn-icon or .btn .btn-sm */
+
+.no-history {
+    text-align: center;
+    color: var(--text-muted); /* Use new var */
+    margin-top: var(--spacing-xl); /* Use new var */
+    padding: var(--spacing-lg); /* Add some padding */
+    background-color: var(--bg-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Sobre */
+.about-container {
+    background-color: var(--bg-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-top: var(--spacing-xl);
+}
+
+.about-content { /* This seems to be the grid container for about sections */
+    display: grid;
+    gap: var(--spacing-lg); /* Use new var */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted minmax */
+}
+
+.about-section { /* Individual sections within the About tab */
+    background-color: var(--bg-light); /* Use new var */
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius); /* Use new var */
+    border: 1px solid var(--border-color-light); /* Add border */
+}
+
+.about-section h3 {
+    color: var(--primary-accent); /* Use new var for emphasis */
+    margin-top: 0; /* Remove top margin for h3 within section */
+    margin-bottom: var(--spacing-md);
+    font-size: 1.25rem; /* Adjusted size */
+}
+
+/* Utilitários */
+/* Remove .glass global style, apply backgrounds/borders directly */
+/*
+.glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+*/
+
+.hidden {
+    display: none !important;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); } /* Added slight Y transform */
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* General Button Styles (to be applied with classes in HTML) */
+.btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 500;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-flex; /* For icon alignment */
+    align-items: center;
+    justify-content: center; /* Center text/icon */
+    gap: var(--spacing-sm);
+    line-height: 1.5; /* Ensure consistent line height */
+}
+
+.btn:focus { /* Basic focus style */
+    outline: none;
+    box-shadow: 0 0 0 .2rem rgba(var(--primary-accent), .25);
+}
+
+.btn-primary {
+    background-color: var(--primary-accent);
+    color: var(--bg-white);
+    border-color: var(--primary-accent);
+}
+.btn-primary:hover {
+    background-color: var(--primary-accent-hover);
+    border-color: var(--primary-accent-hover);
+    color: var(--bg-white); /* Ensure text color remains */
+}
+
+.btn-secondary {
+    background-color: var(--secondary-accent);
+    color: var(--bg-white);
+    border-color: var(--secondary-accent);
+}
+.btn-secondary:hover {
+    background-color: var(--secondary-accent-hover);
+    border-color: var(--secondary-accent-hover);
+    color: var(--bg-white);
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    color: var(--bg-white);
+    border-color: var(--success-color);
+}
+.btn-success:hover {
+    background-color: var(--success-color-hover);
+    border-color: var(--success-color-hover);
+    color: var(--bg-white);
+}
+
+.btn-danger {
+    background-color: var(--error-color);
+    color: var(--bg-white);
+    border-color: var(--error-color);
+}
+.btn-danger:hover {
+    background-color: var(--error-color-hover);
+    border-color: var(--error-color-hover);
+    color: var(--bg-white);
+}
+
+.btn-warning { /* Added warning button style */
+    background-color: var(--warning-color);
+    color: var(--text-dark); /* Warning usually has dark text */
+    border-color: var(--warning-color);
+}
+.btn-warning:hover {
+    background-color: #e0a800; /* Darken warning color */
+    border-color: #d39e00;
+    color: var(--text-dark);
+}
+
+
+.btn-icon { /* For buttons that are just an icon */
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    padding: var(--spacing-sm); /* Adjust padding for icon-only */
+}
+.btn-icon:hover {
+    color: var(--primary-accent);
+    background-color: var(--bg-light); /* Subtle background on hover */
+}
+.btn-icon.btn-danger:hover { /* Specific hover for danger icon */
+    color: var(--error-color);
+}
+
+
+/* Result Container Styles */
+.result-container {
+    background-color: var(--bg-white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-xl);
+    margin: var(--spacing-xl) auto; /* Use auto for horizontal centering if needed */
+    max-width: 1200px; /* Keep max-width */
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg); /* Use new var */
+    padding-bottom: var(--spacing-lg); /* Use new var */
+    border-bottom: 1px solid var(--border-color-light); /* Use new var */
+}
+
+.result-header h2 {
+    color: var(--text-dark); /* Use new var */
+    margin: 0;
+    font-size: 1.5rem; /* Adjusted size */
+    font-weight: 600; /* Adjusted weight */
+}
+
+.result-actions {
+    display: flex;
+    gap: var(--spacing-md); /* Use new var */
+}
+
+/* .action-btn will be replaced by .btn .btn-primary or .btn .btn-secondary */
+/*
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.action-btn i {
+    font-size: 1.1rem;
+}
+
+.export-btn {
+    background: #0056b3;
+    color: #ffffff;
+}
+
+.export-btn:hover {
+    background: #004494;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 86, 179, 0.2);
+}
+
+.share-btn {
+    background: #006400;
+    color: #ffffff;
+}
+
+.share-btn:hover {
+    background: #004d00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 100, 0, 0.2);
+}
+*/
+
+.result-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Keep two columns for wider screens */
+    gap: var(--spacing-xl); /* Use new var */
+    margin-bottom: var(--spacing-lg); /* Use new var */
+}
+
+.result-image-container {
+    position: relative; /* Keep for image-actions */
+    background-color: var(--bg-light); /* Use new var */
+    border-radius: var(--border-radius); /* Use new var */
+    padding: var(--spacing-md); /* Use new var */
+    /* box-shadow: var(--shadow-sm); */ /* Can remove if parent has shadow */
+    border: 1px solid var(--border-color-light); /* Use new var */
+}
+
+.result-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-sm); /* Use new var */
+    object-fit: contain; /* Keep contain for full image visibility */
+    /* border: 1px solid #d0d0d0; */ /* Remove inner border if parent has one */
+}
+
+.image-actions { /* This is same as .image-controls in preview */
+    position: absolute;
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    display: flex;
+    gap: var(--spacing-sm);
+    background: var(--bg-white);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+}
+
+.zoom-btn { /* This should be .btn .btn-icon */
+    /* Styles will come from .btn and .btn-icon */
+}
+/*
+.zoom-btn:hover {
+    background: #f0f0f0;
+    color: #0056b3;
+    border-color: #0056b3;
+}
+*/
+
+.result-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg); /* Use new var */
+}
+
+.analysis-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjusted minmax */
+    gap: var(--spacing-md); /* Use new var */
+    padding: var(--spacing-md); /* Use new var */
+    background-color: var(--bg-light); /* Use new var */
+    border-radius: var(--border-radius); /* Use new var */
+    border: 1px solid var(--border-color-light); /* Use new var */
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm); /* Use new var */
+    color: var(--text-body); /* Use new var */
+    font-weight: 400; /* Normal weight for label */
+    font-size: 0.95rem; /* Slightly smaller */
+}
+
+.info-item i.material-icons { /* Target material icons specifically */
+    color: var(--primary-accent); /* Use new var */
+    font-size: 1.25rem; /* Adjusted size */
+}
+
+.info-item span { /* The actual value */
+    font-weight: 500; /* Bolder for the value */
+    color: var(--text-dark);
+}
+
+.analysis-actions { /* Container for New Analysis / Save to History buttons */
+    display: flex;
+    gap: var(--spacing-md); /* Use new var */
+    margin-top: auto; /* Pushes to bottom if in a flex column */
+}
+
+/* .new-btn, .save-btn will use .btn classes */
+/*
+.new-btn {
+    background: #dc3545;
+    color: #ffffff;
+}
+
+.new-btn:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.2);
+}
+
+.save-btn {
+    background: #6f42c1;
+    color: #ffffff;
+}
+
+.save-btn:hover {
+    background: #5a32a3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(111, 66, 193, 0.2);
+}
+*/
+
+.analysis-result { /* Overall container for all analysis sections */
+    /* background: var(--bg-white); */ /* Can remove if page bg is light */
+    border-radius: var(--border-radius);
+    padding: 0; /* Remove padding if sections have their own */
+    margin-top: var(--spacing-lg); /* Use new var */
+    /* border: 1px solid var(--border-color-light); */ /* Can remove if sections have border */
+}
+
+.analysis-section { /* Individual sections like "Tecido Necrótico", "Granulação" */
+    background-color: var(--bg-white); /* Each section white */
+    border-radius: var(--border-radius); /* Use new var */
+    padding: var(--spacing-lg); /* Use new var */
+    margin-bottom: var(--spacing-lg); /* Use new var */
+    border: 1px solid var(--border-color-light); /* Use new var */
+    box-shadow: var(--shadow-sm);
+}
+
+.analysis-section:last-child {
+    margin-bottom: 0;
+}
+
+.analysis-section h3 {
+    color: var(--text-dark); /* Use new var */
+    margin: 0 0 var(--spacing-md) 0; /* Use new var */
+    font-size: 1.15rem; /* Adjusted size */
+    font-weight: 600; /* Adjusted weight */
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm); /* Use new var */
+}
+
+.analysis-section h3::before { /* Decorative element for section titles */
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 1em; /* Relative to font size */
+    background-color: var(--primary-accent); /* Use new var */
+    border-radius: 2px;
+}
+
+.analysis-text {
+    color: var(--text-body); /* Use new var */
+    line-height: var(--line-height-base);
+    white-space: pre-line; /* Keep for newlines in text */
+    font-size: 0.95rem; /* Adjusted size */
+}
+
+.analysis-text ul {
+    margin: var(--spacing-sm) 0 var(--spacing-sm) var(--spacing-md); /* Adjusted margin */
+    padding-left: var(--spacing-md); /* Use new var */
+}
+
+.analysis-text li {
+    margin-bottom: var(--spacing-xs); /* Use new var */
+    color: var(--text-body); /* Use new var */
+}
+
+/* Responsive Design for Results */
+@media (max-width: 768px) {
+    .result-content {
+        grid-template-columns: 1fr; /* Stack image and details */
+    }
+
+    .result-header {
+        flex-direction: column;
+        gap: var(--spacing-md); /* Use new var */
+        text-align: center;
+    }
+
+    .result-actions {
+        flex-wrap: wrap; /* Allow buttons to wrap */
+        justify-content: center;
+    }
+
+    .analysis-info {
+        grid-template-columns: 1fr; /* Stack info items */
+    }
+
+    .analysis-actions {
+        flex-direction: column; /* Stack action buttons */
+    }
+    .analysis-actions .btn { /* Make stacked buttons full width */
+        width: 100%;
+    }
+
+    /* .action-btn generic rules for responsive handled by .btn */
+    /*
+    .action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    */
+
+    .image-actions { /* Same as .image-controls */
+        position: static;
+        justify-content: center;
+        margin-top: var(--spacing-md);
+        background: transparent;
+        box-shadow: none;
+    }
+}
+
+/* Remove old .feature-card specific glassmorphism, if it exists in this file */
+/*
+.feature-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    transition: var(--glass-transition);
+}
+
+.feature-card:hover {
+    background: var(--gradient-glass);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+}
+*/
+
+/* Progresso da Análise */
+.progress-container {
+    margin: var(--spacing-lg) 0; /* Use new var */
+    padding: var(--spacing-md); /* Use new var */
+    background-color: var(--bg-white); /* New background */
+    border: 1px solid var(--border-color-light); /* New border */
+    border-radius: var(--border-radius); /* Use new var */
+    box-shadow: var(--shadow-sm); /* New shadow */
+    /* transition: var(--glass-transition); */ /* Remove specific transition */
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px; /* Slightly thicker */
+    background-color: var(--bg-light); /* Use new var */
+    border-radius: var(--border-radius-sm); /* Use new var */
+    overflow: hidden;
+    margin-bottom: var(--spacing-sm); /* Use new var */
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: var(--primary-accent); /* Use new var, no gradient needed for simple bar */
+    width: 0%;
+    transition: width 0.4s ease; /* Smoother transition */
+    border-radius: var(--border-radius-sm);
+}
+
+.progress-status {
+    color: var(--text-muted); /* Use new var */
+    font-size: 0.85rem; /* Adjusted size */
+    text-align: center;
+    margin: 0;
+}
+
+/* Container de Erro */
+.error-container { /* This is the modal itself */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95); /* Initial small scale */
+    background-color: var(--bg-white); /* New background */
+    border: 1px solid var(--border-color-medium); /* New border */
+    border-radius: var(--border-radius-lg); /* Use new var */
+    padding: var(--spacing-xl); /* Use new var */
+    box-shadow: var(--shadow-lg); /* Use new var for prominent shadow */
+    z-index: 1050; /* High z-index for modals */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease; /* Smooth transition */
+    width: 90%; /* Max width for responsiveness */
+    max-width: 500px; /* Absolute max width */
+}
+
+.error-container.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1); /* Scale to full size */
+}
+
+.error-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-md); /* Use new var */
+}
+
+.error-icon i.material-icons { /* Assuming Material Icons */
+    font-size: 3rem; /* Adjusted size */
+    color: var(--error-color); /* Use new var */
+}
+
+#errorMessage { /* Specific ID for the message text */
+    color: var(--text-dark); /* Use new var for main error message */
+    margin: 0;
+    font-size: 1rem;
+    line-height: var(--line-height-base);
+}
+#errorMessage strong { /* If there's a strong tag for emphasis */
+    color: var(--error-color);
+}
+
+
+.error-overlay { /* Background overlay for modal */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Darker overlay */
+    /* backdrop-filter: blur(3px); */ /* Optional: blur background */
+    z-index: 1040; /* Below modal, above other content */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.error-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.error-actions { /* Container for modal buttons */
+    display: flex;
+    justify-content: center; /* Center buttons */
+    gap: var(--spacing-md); /* Use new var */
+    margin-top: var(--spacing-lg); /* Use new var */
+    width: 100%; /* Make actions take full width */
+}
+.error-actions .btn { /* Style for buttons in error modal */
+    flex-grow: 1; /* Allow buttons to grow if needed */
+    max-width: 150px; /* Max width for modal buttons */
+}
+
+
+/* Loading Indicator (#loadingIndicator) */
+#loadingIndicator {
+    position: fixed; /* Cover viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.85); /* Light overlay */
+    display: flex; /* Center content */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000; /* Very high z-index */
+    gap: var(--spacing-md);
+    /* visibility and opacity will be controlled by JS */
+}
+
+.spinner {
+    width: 48px; /* Larger spinner */
+    height: 48px;
+    border: 5px solid var(--bg-light); /* Lighter border for contrast */
+    border-top-color: var(--primary-accent); /* Use new var for spinner color */
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite; /* Faster spin */
+}
+#loadingIndicator p { /* Text below spinner */
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Ensure proper visibility of result container (these seem like JS workarounds) */
+/*
+#result-container {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#result-container[style*="display: none"] {
+    opacity: 0;
+    visibility: hidden;
+}
+*/
+
+/* Ensure proper image display */
+/* .result-image-container img is already styled */
+
+/* Ensure proper button visibility (can be handled by :disabled pseudo-class) */
+/*
+.action-btn {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.action-btn:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+*/
+.btn:disabled { /* General disabled style for all buttons */
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+
+/* Ensure proper info display - already styled */
+/*
+.info-item {
+    opacity: 1;
+    visibility: visible;
+}
+
+.info-item span {
+    font-weight: 500;
+}
+*/
+
+/* Ensure proper zoom controls - already styled via .btn .btn-icon */
+/*
+.image-actions {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+}
+
+.zoom-btn {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.zoom-btn:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+*/

@@ -11,19 +11,19 @@
 </head>
 <body>
     <div class="container">
-        <header class="header glass">
+        <header class="header">
             <div class="header-content">
                 <h1>Análise de Imagens Médicas</h1>
                 <p class="subtitle">Análise inteligente de feridas usando IA</p>
             </div>
-            <img src="/static/1.jpg" alt="Logo CognAI" class="app-logo">
+            <img src="1.jpg" alt="Logo CognAI" class="app-logo"> {/* Corrected logo path */}
             <a href="/" class="btn btn-secondary back-to-landing">
                 <span class="material-icons">home</span>
                 Página Inicial
             </a>
         </header>
 
-        <nav class="tabs glass">
+        <nav class="tabs">
             <div class="tab-buttons">
                 <button class="tab-btn active" data-tab="upload">
                     <span class="material-icons">upload</span>
@@ -46,7 +46,7 @@
 
         <main class="main-content">
             <section id="upload" class="tab-content active">
-                <div class="upload-container glass">
+                <div class="upload-container">
                     <div class="upload-area" id="dropZone">
                         <span class="material-icons upload-icon">cloud_upload</span>
                         <p>Arraste e solte sua imagem aqui<br>ou</p>
@@ -63,7 +63,7 @@
                     <div class="preview-container" id="previewContainer" style="display: none;">
                         <div class="preview-header">
                             <h3>Pré-visualização</h3>
-                            <button class="btn btn-icon" id="removeImageBtn" title="Remover imagem">
+                            <button class="btn btn-icon btn-danger" id="removeImageBtn" title="Remover imagem">
                                 <span class="material-icons">close</span>
                             </button>
                         </div>
@@ -140,13 +140,13 @@
                     <div class="result-header">
                         <h2>Resultado da Análise</h2>
                         <div class="result-actions">
-                            <button id="export-pdf" class="action-btn export-btn" title="Exportar para PDF">
+                            <button id="export-pdf" class="btn btn-secondary action-btn" title="Exportar para PDF">
                                 <i class="fas fa-file-pdf"></i> Exportar PDF
                             </button>
-                            <button id="export-image" class="action-btn export-btn" title="Exportar Imagem">
+                            <button id="export-image" class="btn btn-secondary action-btn" title="Exportar Imagem">
                                 <i class="fas fa-image"></i> Exportar Imagem
                             </button>
-                            <button id="share-result" class="action-btn share-btn" title="Compartilhar">
+                            <button id="share-result" class="btn btn-secondary action-btn" title="Compartilhar">
                                 <i class="fas fa-share-alt"></i> Compartilhar
                             </button>
                         </div>
@@ -185,10 +185,10 @@
                             </div>
 
                             <div class="analysis-actions">
-                                <button id="new-analysis" class="action-btn new-btn" title="Nova Análise">
+                                <button id="new-analysis" class="btn btn-primary action-btn" title="Nova Análise">
                                     <i class="fas fa-plus"></i> Nova Análise
                                 </button>
-                                <button id="save-analysis" class="action-btn save-btn" title="Salvar Análise">
+                                <button id="save-analysis" class="btn btn-success action-btn" title="Salvar Análise">
                                     <i class="fas fa-save"></i> Salvar
                                 </button>
                             </div>
@@ -200,7 +200,7 @@
             </section>
 
             <section id="history" class="tab-content">
-                <div class="history-container glass">
+                <div class="history-container">
                     <div class="history-header">
                         <div class="history-title">
                             <h2>Histórico de Análises</h2>
@@ -218,7 +218,7 @@
             </section>
 
             <section id="about" class="tab-content">
-                <div class="about-container glass">
+                <div class="about-container">
                     <h2>Sobre o Sistema</h2>
                     <div class="about-content">
                         <div class="about-section">
